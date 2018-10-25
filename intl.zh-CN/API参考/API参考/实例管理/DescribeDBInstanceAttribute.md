@@ -56,7 +56,7 @@
 
 |
 |DBInstanceType|String|实例类型。-   sharding：分片集群实例；
--   replicate：单节点或者三节点副本集实例。
+-   replicate：副本集实例。
 
 |
 |LastDowngradeTime|Integer|实例最近一次降配时间。|
