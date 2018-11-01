@@ -21,7 +21,7 @@
 -   默认值为3
 
  |
-|DBInstanceClass|String|是|实例规格，可选值：见\[实例规格表\]\(~~57141~~\)。|
+|DBInstanceClass|String|是|实例规格，可选值：见[实例规格表](intl.zh-CN/API参考/API参考/附表/实例规格表.md#)。|
 |DBInstanceStorage|Integer|是| -   自定义存储空间，取值范围：\[10,2000\]。
 -   每10GB进行递增，单位：GB。
 
