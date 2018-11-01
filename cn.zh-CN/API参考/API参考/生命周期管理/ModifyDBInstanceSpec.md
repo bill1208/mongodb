@@ -10,7 +10,7 @@
 |--|--|----|--|
 |Action|String|是|系统规定参数，取值为：ModifyDBInstanceSpec。|
 |DBInstanceId|String|是|待变更配置实例的实例ID。|
-|DBInstanceClass|String|否|实例规格，参数值请参见[实例规格表](https://www.alibabacloud.com/help/zh/doc-detail/57141.htm?spm=a2c63.p38356.a3.1.834341bbYb3oma)。|
+|DBInstanceClass|String|否|实例规格，参数值请参见[实例规格表](intl.zh-CN/API参考/API参考/附表/实例规格表.md#)。|
 |OrderType|String|否|变配类型：-   UPGRADE：升配；
 -   DOWNGRADE：降配，默认为降配；
 -   仅当实例付费方式为包年包月时需传入该值。
@@ -20,6 +20,12 @@
 -   单位：GB。
 
 |
+|ReplicationFactor|String|否| 副本集节点个数。
+
+-   可传入范围为：3，5，7
+-   如不传入，则默认为3。
+
+ |
 |EffectiveTime|String|否|生效时间：-   Immediately：立即生效；
 -   MaintainTime：可运维时间段内生效。
 
