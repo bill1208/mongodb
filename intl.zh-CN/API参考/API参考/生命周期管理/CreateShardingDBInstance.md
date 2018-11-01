@@ -23,7 +23,7 @@
 默认值为WiredTiger。
 
 |
-|EngineVersion|String|是|数据库版本号，取值：3.2、3.44.0。
+|EngineVersion|String|是|数据库版本号，取值：3.2、3.4或4.0。
 
 |
 |DBInstanceDescription|String|否|实例的描述或备注信息。以中文或字母开头，可以包含中文、英文字符、下划线（\_）、连字符（-）和数字。长度为2~256个字符。
