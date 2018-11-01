@@ -6,9 +6,7 @@
 
 |名称|类型|是否必须|描述|
 |--|--|----|--|
-|Action|String|是|要执行的操作，取值：DescribeDBInstanceAttribute。
-
-|
+|Action|String|是|要执行的操作，取值：DescribeDBInstanceAttribute。|
 |DBInstanceId|String|是|实例ID。可一次输入多个，以英文“,”逗号分隔，最多可传入30个ID。
 
 |
@@ -37,14 +35,19 @@
 |ZoneId|String|实例所属可用区ID。|
 |Engine|String|数据库存储引擎。|
 |EngineVersion|String|数据库版本。|
+|ReplicationFactor|String| 副本集实例节点数。
+
+ 实例类型为副本集实例时返回该参数。
+
+ |
 |DBInstanceClass|String|实例规格。|
 |DBInstanceStorage|String|实例存储空间。|
-|DBInstanceStatus|String|实例状态。详情，请参见[实例状态表](https://www.alibabacloud.com/help/zh/doc-detail/63870.htm)。|
+|DBInstanceStatus|String|实例状态。详情，请参见[实例状态表](intl.zh-CN/API参考/API参考/附表/实例状态表.md#)。|
 |ChargeType|String|实例付费类型。-   PrePaid：包年包月；
 -   PostPaid：按量付费。
 
 |
-|ReplicaSetName|String|三节点副本集实例名称。|
+|ReplicaSetName|String|副本集实例名称。|
 |CreationTime|String|实例创建时间。|
 |ExpireTime|String|包年包月实例到期时间。按量付费实例无到期时间。
 
