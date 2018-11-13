@@ -16,7 +16,7 @@
 
 ## 迁移功能 {#section_icw_bb1_kfb .section}
 
--   MongoDB版本支持MongoDB 3.0、3.2、3.4、4.0版本。
+-   MongoDB版本支持MongoDB 3.0、3.2、3.4版本。
 -   MongoDB全量数据迁移支持。
     -   支持database迁移
     -   支持collection迁移
