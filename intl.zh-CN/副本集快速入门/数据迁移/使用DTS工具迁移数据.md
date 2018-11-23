@@ -62,7 +62,7 @@
 
 使用DTS进行数据迁移，操作步骤如下所示：
 
-1.  打开阿里云[DTS控制台](http://dts.aliyun.com)，单击**数据迁移** \> **创建迁移任务**，进入任务配置页面，填写任务名称、源库信息以及目标库信息，如下图所示。
+1.  打开阿里云[https://dts-intl.console.aliyun.com/](https://dts-intl.console.aliyun.com/)，单击**数据迁移** \> **创建迁移任务**，进入任务配置页面，填写任务名称、源库信息以及目标库信息，如下图所示。
 
     ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/60037/cn_zh/1506667681073/ykxx.png)![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/60037/cn_zh/1506667705070/mbk.png)
 
@@ -102,13 +102,13 @@
     |迁移对象|     -   迁移对象选择的粒度可以为：库、collection/function 两个粒度。
     -   默认情况下，对象迁移到MongoDB实例后，对象名跟本地MongoDB数据库一致。
 
-**说明：** 如果您迁移的对象在源数据库跟目标实例上名称不同，那么需要使用DTS提供的对象名映射功能，使用方法请参考：[库表列映射](https://help.aliyun.com/document_detail/26628.html)。
+**说明：** 如果您迁移的对象在源数据库跟目标实例上名称不同，那么需要使用DTS提供的对象名映射功能，使用方法请参考：[https://www.alibabacloud.com/help/zh/doc-detail/26628.htm](https://www.alibabacloud.com/help/zh/doc-detail/26628.htm)。
 
  |
 
 4.  预检查。
 
-    在迁移任务正式启动之前，会先进行前置预检查，只有预检查通过后，才能成功启动迁移。预检查的内容及修复方式请参考[预检查](https://help.aliyun.com/document_detail/60037.html?spm=a2c4g.11186623.6.582.66804442QK1D58#yjc)。
+    在迁移任务正式启动之前，会先进行前置预检查，只有预检查通过后，才能成功启动迁移。预检查的内容及修复方式请参考文末的[预检查](#section_z3t_k21_kfb)。
 
     如果预检查失败，可以单击具体检查项后的按钮，查看具体的失败详情，并根据失败原因修复后，重新进行预检查。![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/26625/cn_zh/1470308924221/MongoDB%E8%BF%81%E7%A7%BB_%E6%AD%A5%E9%AA%A43.jpg)
 
