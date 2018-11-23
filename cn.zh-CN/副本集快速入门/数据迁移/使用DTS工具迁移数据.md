@@ -102,7 +102,7 @@
     |迁移对象|     -   迁移对象选择的粒度可以为：库、collection/function 两个粒度。
     -   默认情况下，对象迁移到MongoDB实例后，对象名跟本地MongoDB数据库一致。
 
-**说明：** 如果您迁移的对象在源数据库跟目标实例上名称不同，那么需要使用DTS提供的对象名映射功能，使用方法请参考：[https://www.alibabacloud.com/help/zh/doc-detail/26628.htm](https://www.alibabacloud.com/help/zh/doc-detail/26628.htm)。
+**说明：** 如果您迁移的对象在源数据库跟目标实例上名称不同，那么需要使用DTS提供的对象名映射功能，使用方法请参考：[库列表映射](https://www.alibabacloud.com/help/zh/doc-detail/26628.htm)。
 
  |
 
