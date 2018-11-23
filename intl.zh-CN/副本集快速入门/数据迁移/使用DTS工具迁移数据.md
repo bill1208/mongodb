@@ -62,7 +62,7 @@
 
 使用DTS进行数据迁移，操作步骤如下所示：
 
-1.  打开阿里云[https://dts-intl.console.aliyun.com/](https://dts-intl.console.aliyun.com/)，单击**数据迁移** \> **创建迁移任务**，进入任务配置页面，填写任务名称、源库信息以及目标库信息，如下图所示。
+1.  打开阿里云[DTS控制台](https://dts-intl.console.aliyun.com/)，单击**数据迁移** \> **创建迁移任务**，进入任务配置页面，填写任务名称、源库信息以及目标库信息，如下图所示。
 
     ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/60037/cn_zh/1506667681073/ykxx.png)![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/60037/cn_zh/1506667705070/mbk.png)
 
