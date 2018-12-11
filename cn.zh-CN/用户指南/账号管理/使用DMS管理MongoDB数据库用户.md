@@ -10,11 +10,11 @@
 
 2.  在顶部导航栏，单击**创建** \> **用户**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154449849833756_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154450017133756_zh-CN.png)
 
 3.  在创建用户页面，首先设置新用户的账户信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154449849833757_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154450017133757_zh-CN.png)
 
     |配置项目|说明|
     |:---|:-|
@@ -23,8 +23,9 @@
     -   目标库选择为非admin库时，创建的用户为普通用户。
     -   目标库选择为**admin**库时，创建的用户为高权限用户。
 |
-    |用户名|设置用户的名称。不支持中文，支持英文、数字和特殊字符。
-
+    |用户名|设置用户的名称。    -   不支持中文
+    -   支持英文、数字和特殊字符
+    -   特殊字符为!\#$%^&\*\(\)\_+-=
 |
     |密码|设置用户的密码。为保障数据安全性，建议设置的密码至少包含大写、小写、数字、特殊字符中的三种，长度为8-32位；特殊字符为!\#$%^&\*\(\)\_+-=
 
@@ -33,7 +34,7 @@
 
 4.  在创建用户页面，设置新用户的权限信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154449849833758_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154450017133758_zh-CN.png)
 
     **说明：** 
 
@@ -60,7 +61,7 @@
 2.  在左侧**对象列表**栏目中，展开要进行编辑的用户所在的**数据库**节点。
 3.  展开**用户**节点，右键单击该用户。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154449849833778_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/77122/154450017133778_zh-CN.png)
 
 4.  编辑用户对话框，可设置该用户的密码或权限信息。
 5.  单击**确认**。
