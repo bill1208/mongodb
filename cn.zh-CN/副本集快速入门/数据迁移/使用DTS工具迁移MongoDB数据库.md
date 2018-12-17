@@ -44,10 +44,7 @@
  |
 |目的MongoDB实例|readWrite|readWrite|
 
-**说明：** 
-
--   关于MongoDB云数据库迁移账号的创建及授权操作请参考[使用DMS管理MongoDB数据库用户](../intl.zh-CN/用户指南/账号管理/使用DMS管理MongoDB数据库用户.md#)。
--   关于本地MongoDB数据库迁移账号的创建及授权操作请参考[MongoDB Create User说明](https://docs.mongodb.com/manual/reference/method/db.createUser/)。
+**说明：** 关于MongoDB数据库迁移账号的创建及授权操作请参考[MongoDB Create User说明](https://docs.mongodb.com/manual/reference/method/db.createUser/)。
 
 ## 操作步骤 {#section_njl_2c1_kfb .section}
 
@@ -56,7 +53,7 @@
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/154502520434129_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/154502575734129_zh-CN.png)
 
     |源库及目标库信息说明表|
     |:----------|
@@ -87,7 +84,7 @@
     -   如果您的本地MongoDB数据库进行了白名单安全设置，您需要在**源库信息**栏目中，单击**获取DTS IP段**来获取到DTS服务器的IP地址，并将获取到的IP地址加入本地MongoDB数据库的白名单安全设置中。
 6.  选择迁移对象及迁移类型。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/154502520433659_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/154502575733659_zh-CN.png)
 
     |迁移对象及迁移类型|
     |:--------|
@@ -122,7 +119,7 @@
 
         迁移任务不会自动结束，观察迁移任务的状态显示为**增量迁移无延迟**的状态时，将源库停写几分钟，等待增量迁移再次进入**增量迁移无延迟**状态，手动停止迁移任务。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/154502520433674_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/154502575733674_zh-CN.png)
 
 
 检查校验数据无误后即可将业务切换至云数据库MongoDB实例。
