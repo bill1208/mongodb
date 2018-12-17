@@ -12,7 +12,7 @@ MongoDB管理控制台是阿里云管理控制台的一部分，关于控制台�
 
 对于MongoDB所有单节点类型的实例而言，控制台首页的界面信息都是相同的。
 
-登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)，进入实例列表页面，如下图所示（仅为示例，请以实际界面为准）。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6658/154149612313185_zh-CN.png)
+登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)，进入实例列表页面，如下图所示（仅为示例，请以实际界面为准）。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6658/154503130113185_zh-CN.png)
 
 参考说明
 
@@ -35,7 +35,7 @@ MongoDB管理控制台是阿里云管理控制台的一部分，关于控制台�
 
 |控制台页面名称|区块名称|描述|常用操作链接|
 |:------|:---|:-|:-----|
-|界面上方操作区| |自建MongoDB迁移、备份实例、重启实例操作。| -   [数据迁移](../../../../intl.zh-CN/用户指南/数据迁移.md)
+|界面上方操作区| |自建MongoDB迁移、备份实例、重启实例操作。| -   [数据迁移](../../../../intl.zh-CN/用户指南/数据迁移/迁移方案概览.md#)
 -   备份实例
 -   [重启实例](../../../../intl.zh-CN/用户指南/实例管理/重启实例.md#)
 
