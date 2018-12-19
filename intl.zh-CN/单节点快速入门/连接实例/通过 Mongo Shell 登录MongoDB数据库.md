@@ -1,31 +1,34 @@
-# 通过 Mongo Shell 登录MongoDB数据库 {#task_iw5_tg4_hfb .task}
+# 通过 Mongo Shell 登录MongoDB数据库 {#concept_atc_g3d_2gb .concept}
 
-云数据库MongoDB支持通过 Mongo Shell 的方式连接登录。
+您可以在本地或[ECS](https://help.aliyun.com/document_detail/25367.html)[ECS](https://www.alibabacloud.com/help/zh/doc-detail/25367.htm)上安装 Mongo Shell 工具，通过 Mongo Shell 的方式登录MongoDB数据库。
 
-为保障鉴权成功，请安装 Mongo Shell 3.0及以上的版本。安装步骤请参考官方文档 [Install MongoDB](https://docs.mongodb.com/v3.4/installation/)。
+## 注意事项 {#section_php_33d_2gb .section}
 
-已经将访问该实例的IP地址或者IP段加入到实例白名单中，详情请参见[设置白名单](intl.zh-CN/单节点快速入门/设置白名单.md#)。
+-   为保障鉴权成功，请安装 Mongo Shell 3.0及以上的版本。安装步骤请参考官方文档 [Install MongoDB](https://docs.mongodb.com/v3.4/installation/)。
+-   需要提前将访问该实例的IP地址或者IP段加入到实例白名单中，详情请参见[设置白名单](https://help.aliyun.com/document_detail/54529.html#task774)。
+-   同一地域内、不同可用区之间的MongoDB实例和ECS实例可以通过专有网络进行连接，详情请参见[MongoDB跨可用区内网访问实例](../intl.zh-CN/用户指南/连接实例/MongoDB跨可用区内网访问实例.md#)。
+-   如需通过公网登录MongoDB数据库，需要申请公网连接地址，详情请参见[申请公网连接地址](https://help.aliyun.com/document_detail/63981.html#task-z3n-1xz-jfb)。
 
-1.   登录MongoDB[管理控制台](https://mongodb.console.aliyun.com/)。 
-2.   单击目标实例ID进入基本信息页面。 
-3.   单击左侧导航栏的**数据库连接**，可查看到实例的**内网连接 - 专有网络**和**公网连接**两种连接地址，根据您的情况选用，如下图所示。 ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6664/154501409213741_zh-CN.png)
+## 操作步骤 {#section_gd4_l3d_2gb .section}
 
-    连接地址和端口号之间用冒号隔开，默认端口号为3717，默认连接数据库为admin。
-
-4.  在[ECS](https://www.alibabacloud.com/help/zh/doc-detail/25367.htm)上使用mongo命令进行连接，命令样例如下。 
+1.  登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)。
+2.  单击目标实例ID或者单击**![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6723/154518652913851_zh-CN.png)** \> **管理**
+3.  单击左侧导航栏的**数据库连接**，获取到连接 Primary 节点的连接地址。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6664/154518652913741_zh-CN.png)
+4.  在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
 
     ```
     mongo --host <host>:3717 -u <username> -p <password> --authenticationDatabase admin
     ```
 
-    说明：
+    **说明：** 
 
-    -   <host\>：MongoDB实例的连接地址。
+    -   <host\>：Primary 节点连接地址中的域名信息。
     -   <username\>：登录数据库的用户名，默认为root。
-    -   <password\>：登录数据库的密码。
-    Mongo shell常见问题：
+    -   <password\>：登录数据库的密码，如忘记密码请参考[设置密码](intl.zh-CN/单节点快速入门/设置密码.md#)。
 
-    -   [连接问题](https://www.alibabacloud.com/help/zh/doc-detail/61100.htm)
-    -   [连接数问题](https://www.alibabacloud.com/help/zh/doc-detail/61114.htm)
-    -   [负载高问题](https://www.alibabacloud.com/help/zh/doc-detail/61149.htm)
+## 相关问题 {#section_dld_xjd_2gb .section}
+
+-   [排查 Mongo Shell 登录问题](../intl.zh-CN/产品使用问题/排查 Mongo Shell 登录问题.md#)
+-   [排查 MongoDB CPU使用率高的问题](../intl.zh-CN/最佳实践/排查 MongoDB CPU使用率高的问题.md#)
+-   [如何查询及限制连接数](../intl.zh-CN/产品使用问题/如何查询及限制连接数.md#)
 
