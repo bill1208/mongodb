@@ -1,6 +1,6 @@
 # 通过 Mongo Shell 登录MongoDB数据库 {#concept_qgf_hv4_dgb .concept}
 
-您可以在本地服务器上或[ECS](https://help.aliyun.com/document_detail/25367.html)[ECS](https://www.alibabacloud.com/help/zh/doc-detail/25367.htm)上安装 Mongo Shell 工具，通过 Mongo Shell 的方式登录MongoDB数据库。
+您可以在本地服务器上或[ECS](https://www.alibabacloud.com/help/zh/doc-detail/25367.htm)上安装 Mongo Shell 工具，通过 Mongo Shell 的方式登录MongoDB数据库。
 
 ## 注意事项 {#section_psj_jv4_dgb .section}
 
@@ -11,12 +11,12 @@
 ## 操作步骤 {#section_i15_dw4_dgb .section}
 
 1.  登录[MongoDB管理控制台](https://mongodb.console.aliyun.com)。
-2.  单击目标实例ID或者单击**![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6723/154512695713851_zh-CN.png)** \> **管理**
+2.  单击目标实例ID或者单击**![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6723/154520079613851_zh-CN.png)** \> **管理**
 3.  单击左侧导航栏的**数据库连接**。
 4.  在安装有 Mongo Shell 的 本地服务器或ECS上进行连接。
     -   副本集中的单个节点连接方式。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154512695731535_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154520079631535_zh-CN.png)
 
         日常测试时，可直接连接 Primary 节点。需要注意的是一旦发生[主备切换](../intl.zh-CN/用户指南/主备切换/副本集实例设置主备切换.md#)，连接节点的角色将发生变化，从而会对读写操作造成影响。
 
@@ -33,7 +33,7 @@
         -   <password\>：登录数据库的密码。
     -   高可用连接方式（推荐）：可实现高可用，确保连接的节点始终为 Primary 节点，不会因为主备切换而影响读写操作。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154512695734449_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154520079634449_zh-CN.png)
 
         Mongo Shell 连接示例
 
