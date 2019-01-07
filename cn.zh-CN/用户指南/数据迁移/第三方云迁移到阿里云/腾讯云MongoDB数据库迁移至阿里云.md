@@ -42,7 +42,7 @@
 2.  登录腾讯云服务器，安装3.0以上版本的MongoDB程序。详情请参考[安装MongoDB](https://docs.mongodb.com/manual/administration/install-community/)。
 3.  在腾讯云控制台，查看腾讯云MongoDB实例的内网IP地址。
 
-    ![查看MongoDB实例的内网IP地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/84333/154684547535670_zh-CN.png)
+    ![查看MongoDB实例的内网IP地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/84333/154685458535670_zh-CN.png)
 
 4.  在腾讯云服务器上执行以下命令进行数据备份，将数据备份至该服务器上。
 
@@ -65,7 +65,7 @@
 
 5.  在腾讯云控制台，查看腾讯云服务器的公网IP地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/84333/154684547535509_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/84333/154685458535509_zh-CN.png)
 
 6.  登录[阿里云MongoDB控制台](https://mongodb.console.aliyun.com)，将腾讯云服务器的公网IP地址加入到阿里云MongoDB实例的白名单中。详情请参考[设置白名单](cn.zh-CN/用户指南/数据安全性/设置白名单.md#)。
 7.  获取阿里云MongoDB实例的公网连接地址。
