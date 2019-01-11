@@ -14,5 +14,5 @@
 
 若您初次使用阿里云MongoDB，请先了解[阿里云MongoDB使用须知](intl.zh-CN/单节点快速入门/使用前须知.md#)以及[阿里云MongoDB管理控制台](intl.zh-CN/单节点快速入门/关于MongoDB控制台.md#)。
 
-通常，从新购实例到可以开始使用实例，您需要完成如下操作：![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6656/154149616113100_zh-CN.png)
+通常，从新购实例到可以开始使用实例，您需要完成如下操作：![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6656/154718932313100_zh-CN.png)
 
