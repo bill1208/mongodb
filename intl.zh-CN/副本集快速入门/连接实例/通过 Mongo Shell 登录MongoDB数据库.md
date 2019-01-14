@@ -6,36 +6,51 @@
 
 -   为保障鉴权成功，请安装 Mongo Shell 3.0及以上的版本。安装步骤请参考官方文档 [Install MongoDB](https://docs.mongodb.com/v3.4/installation/)。
 -   需要提前将访问该实例的IP地址或者IP段加入到实例白名单中，详情请参见[设置白名单](intl.zh-CN/副本集快速入门/设置白名单.md#)。
--   如需通过公网登录MongoDB数据库，需要申请公网连接地址，详情请参见[申请公网连接地址](intl.zh-CN/副本集快速入门/连接实例/申请公网连接地址.md#)。
+-   如需通过公网登录MongoDB数据库，需要申请公网连接地址，详情请参见[申请公网连接地址](intl.zh-CN/副本集快速入门/申请公网连接地址.md#)。
 
 ## 操作步骤 {#section_i15_dw4_dgb .section}
 
-1.  登录[MongoDB管理控制台](https://mongodb.console.aliyun.com)。
-2.  单击目标实例ID或者单击**![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6723/154520079613851_zh-CN.png)** \> **管理**
-3.  单击左侧导航栏的**数据库连接**。
-4.  在安装有 Mongo Shell 的 本地服务器或ECS上进行连接。
+1.  登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)。
+2.  在页面左上角，选择实例所在的地域。
+3.  在左侧导航栏，单击**副本集实例列表**。
+4.  找到目标实例，单击实例ID。
+5.  在单击左侧导航栏的**数据库连接**，获取单个节点的连接地址和ConnectionStringURI连接地址。
+6.  在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
     -   副本集中的单个节点连接方式。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154520079631535_zh-CN.png)
+        日常测试时，可直接连接 Primary 节点。需要注意的是一旦发生[主备切换](../../../../../intl.zh-CN/用户指南/主备切换/副本集实例设置主备切换.md#)，连接节点的角色将发生变化，从而会对读写操作造成影响。
 
-        日常测试时，可直接连接 Primary 节点。需要注意的是一旦发生[主备切换](../intl.zh-CN/用户指南/主备切换/副本集实例设置主备切换.md#)，连接节点的角色将发生变化，从而会对读写操作造成影响。
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154745846031535_zh-CN.png)
 
-        Mongo Shell 连接示例
+        在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
 
         ```
-        mongo --host <host>:3717 -u <username> -p <password> --authenticationDatabase admin
+        mongo --host <host> -u <username> -p --authenticationDatabase <database>
         ```
 
         **说明：** 
 
-        -   <host\>：Primary 节点连接地址中的域名信息。
-        -   <username\>：登录数据库的用户名，默认为root。
-        -   <password\>：登录数据库的密码。
-    -   高可用连接方式（推荐）：可实现高可用，确保连接的节点始终为 Primary 节点，不会因为主备切换而影响读写操作。
+        -   <host\>：Primary 节点或 Secondary 节点的连接地址。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154520079634449_zh-CN.png)
+            -   Primary 节点：副本集实例中的主节点，该节点拥有数据库读写权限。
+            -   Secondary 节点：副本集实例中的从节点，该节点仅拥有数据库的读权限
+        -   <username\>：登录数据库的账号，默认为 root 。
+        -   <database\>：对登录数据库的账号和密码进行认证的数据库，默认为 admin 。
+        示例：
 
-        Mongo Shell 连接示例
+        ```
+        mongo --host dds-bp**********.mongodb.rds.aliyuncs.com:3717 -u root -p --authenticationDatabase admin
+        ```
+
+        命令行提示`Enter password:`时，输入数据库账号对应的密码。忘记密码请参考[设置密码](intl.zh-CN/单节点快速入门/设置密码.md#)。
+
+        **说明：** 输入密码时，密码字符是不可见的。
+
+    -   高可用连接方式（推荐）：使用ConnectionStringURI连接数据库，可实现高可用性。确保连接的节点始终为 Primary 节点，不会因为主备切换而影响应用的读写操作。
+
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154745846034449_zh-CN.png)
+
+        在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
 
         ```
         mongo "<ConnectionStringURI>"
@@ -43,12 +58,15 @@
 
         **说明：** 
 
-        -   双引号须为英文双引号。
-        -   <ConnectionStringURI\>：实例的**ConnectionStringURI**地址，**ConnectionStringURI**地址中`****`为数据库密码。数据库密码设置请参考[设置密码](intl.zh-CN/副本集快速入门/设置密码.md#)。
+        -   双引号须为英文双引号（""）。
+        -   <ConnectionStringURI\>：实例的**ConnectionStringURI**地址。
+
+            **ConnectionStringURI**地址中`****`替换为数据库密码。数据库密码设置请参考[设置密码](intl.zh-CN/副本集快速入门/设置密码.md#)。
+
 
 ## 相关问题 {#section_why_5w4_dgb .section}
 
--   [排查 Mongo Shell 登录问题](../intl.zh-CN/产品使用问题/排查 Mongo Shell 登录问题.md#)
--   [排查 MongoDB CPU使用率高的问题](../intl.zh-CN/最佳实践/排查 MongoDB CPU使用率高的问题.md#)
--   [如何查询及限制连接数](../intl.zh-CN/产品使用问题/如何查询及限制连接数.md#)
+-   [排查 Mongo Shell 登录问题](../../../../../intl.zh-CN/产品使用问题/排查 Mongo Shell 登录问题.md#)
+-   [排查 MongoDB CPU使用率高的问题](../../../../../intl.zh-CN/最佳实践/排查 MongoDB CPU使用率高的问题.md#)
+-   [如何查询及限制连接数](../../../../../intl.zh-CN/产品使用问题/如何查询及限制连接数.md#)
 
