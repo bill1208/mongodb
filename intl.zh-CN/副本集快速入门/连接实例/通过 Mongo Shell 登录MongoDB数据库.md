@@ -14,13 +14,13 @@
 2.  在页面左上角，选择实例所在的地域。
 3.  在左侧导航栏，单击**副本集实例列表**。
 4.  找到目标实例，单击实例ID。
-5.  在单击左侧导航栏的**数据库连接**，获取单个节点的连接地址和ConnectionStringURI连接地址。
+5.  单击左侧导航栏的**数据库连接**，获取单个节点的连接地址和 ConnectionStringURI 连接地址。
 6.  在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
     -   副本集中的单个节点连接方式。
 
         日常测试时，可直接连接 Primary 节点。需要注意的是一旦发生[主备切换](../../../../../intl.zh-CN/用户指南/主备切换/副本集实例设置主备切换.md#)，连接节点的角色将发生变化，从而会对读写操作造成影响。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154745846031535_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154753260931535_zh-CN.png)
 
         在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
 
@@ -48,7 +48,7 @@
 
     -   高可用连接方式（推荐）：使用ConnectionStringURI连接数据库，可实现高可用性。确保连接的节点始终为 Primary 节点，不会因为主备切换而影响应用的读写操作。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154745846034449_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154753260934449_zh-CN.png)
 
         在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
 
