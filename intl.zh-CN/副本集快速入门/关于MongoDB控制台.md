@@ -12,7 +12,7 @@ MongoDB管理控制台是阿里云管理控制台的一部分，关于控制台�
 
 对于MongoDB所有副本集实例而言，控制台首页的界面信息都是相同的。
 
-登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)，进入实例列表页面，如下图所示（仅为示例，请以实际界面为准）。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6668/154503133613769_zh-CN.png)
+登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)，进入实例列表页面，如下图所示（仅为示例，请以实际界面为准）。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6668/154788443913769_zh-CN.png)
 
 参考说明
 
