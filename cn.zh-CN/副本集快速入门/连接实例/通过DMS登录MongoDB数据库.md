@@ -15,15 +15,15 @@
 4.  找到目标实例，单击实例ID。
 5.  在左侧导航栏，单击**数据库连接**，获取 Primary 节点的内网连接地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6674/154745844434552_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6674/154891455834552_zh-CN.png)
 
 6.  单击页面右上角的**登录数据库**，选择要登录的数据库节点为**Primary**或**Secondary**，跳转到数据管理控制台页面。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6674/154745844413329_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6674/154891455813329_zh-CN.png)
 
 7.  在数据管理控制台页面，填写相应信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154745844413740_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154891455813740_zh-CN.png)
 
     -   网络地址及端口：填入 Primary 节点的内网连接地址。
     -   数据库用户名：默认为root。
@@ -33,10 +33,14 @@
 
     如果您尚未将DMS服务器的IP地址加入MongoDB实例的白名单中，单击**登录**后则会弹出对话框提示。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154745844433336_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154891455933336_zh-CN.png)
 
     **说明：** 将对话框中显示的DMS服务器IP地址加入到MongoDB实例的白名单中即可正常登录，详情请参考[设置白名单](cn.zh-CN/副本集快速入门/设置白名单.md#)。
 
 
-关于DMS中MongoDB数据库的相关操作介绍请参考[DMS for MongoDB](https://help.aliyun.com/document_detail/47683.html)。
+## 更多信息 {#section_zsr_lf2_qgb .section}
+
+不建议在生产环境中直接使用 root 用户登录数据库。您可以根据业务需求，创建用户并分配权限，详情请参考[使用DMS管理MongoDB数据库用户](../cn.zh-CN/用户指南/账号管理/使用DMS管理MongoDB数据库用户.md#)。
+
+**说明：** 关于DMS中MongoDB数据库的更多相关操作介绍请参考[DMS for MongoDB](https://help.aliyun.com/document_detail/47683.html)。
 
