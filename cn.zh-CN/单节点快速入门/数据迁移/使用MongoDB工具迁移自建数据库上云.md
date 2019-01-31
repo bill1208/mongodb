@@ -2,11 +2,14 @@
 
 MongoDB数据库自带有 Mongodump 和 Mongorestore 工具。通过对这两个工具的使用，您可以将自建MongoDB数据库迁移至阿里云MongoDB单节点实例的数据库中。
 
+## 前提条件 {#section_yvn_5hk_pgb .section}
+
+-   请确保安装的 Mongodump 和 Mongorestore 软件版本，与自建的MongoDB数据库的版本一致。
+-   单节点实例的存储空间应大于MongoDB自建数据库占用的存储空间。如存储空间不足，您可以通过[变更配置](../../../../../cn.zh-CN/用户指南/实例管理/变更配置.md#)来升级存储空间。
+
 ## 注意事项 {#section_rh3_lgd_5fb .section}
 
--   本文操作适用于新购的实例且实例的数据库没有数据的场景。
 -   该操作为全量数据迁移。为避免迁移前后数据不一致，迁移开始前请停止数据库写入。
--   请确保安装的 Mongodump 和 Mongorestore 软件版本，与自建的MongoDB数据库的版本一致。
 -   如果您之前使用 Mongodump 命令对数据库进行过备份操作，请将备份在 dump 文件夹下的备份文件移动至其他目录。确保 dump 文件夹为空，否则将会覆盖该文件夹下之前备份的文件。
 -   请在自建MongoDB数据库服务器上执行 Mongodump 和 Mongorestore命令，并非在 Mongo shell环境下执行。
 
@@ -34,7 +37,7 @@ MongoDB数据库自带有 Mongodump 和 Mongorestore 工具。通过对这两个
 
 2.  命令行提示 `Enter password:`时，输入数据库账号对应的密码，数据库开始备份。
 
-等待备份完成，自建数据库将备份至当前目录下dump文件夹中。
+等待备份完成，自建数据库中的数据将备份至当前目录下dump文件夹中。
 
 ## 迁移至阿里云数据库MongoDB {#section_nvh_r4d_5fb .section}
 
@@ -43,10 +46,10 @@ MongoDB数据库自带有 Mongodump 和 Mongorestore 工具。通过对这两个
     1.  登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/#/mongodb/list)。
     2.  选择目标实例所在地域。
     3.  在左侧导航栏，单击**副本集实例列表**。
-    4.  单击目标实例ID或者单击实例右侧的**![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6723/154727636313851_zh-CN.png)** \> **管理**。
+    4.  单击目标实例ID。
     5.  在左侧导航栏，单击**数据库连接**，查看数据库连接信息。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/82882/154727636335103_zh-CN.png)
+        ![MongoDB单节点查看连接信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/82882/154891639735103_zh-CN.png)
 
     **说明：** 
 
@@ -82,5 +85,10 @@ MongoDB数据库自带有 Mongodump 和 Mongorestore 工具。通过对这两个
     **说明：** 忘记数据库密码，请参考[设置密码](cn.zh-CN/单节点快速入门/设置密码.md#)。
 
 
-等待数据迁移完成，检查校验数据无误后即可将业务切换至阿里云MongoDB数据库。
+等待数据迁移完成，根据业务需求选择合适的时间，将业务切换至阿里云MongoDB数据库。
+
+## 更多信息 {#section_kqs_yjk_pgb .section}
+
+-   [通过 Mongo Shell 登录MongoDB数据库](cn.zh-CN/单节点快速入门/连接实例/通过 Mongo Shell 登录MongoDB数据库.md#)
+-   [使用DMS管理MongoDB数据库用户](../../../../../cn.zh-CN/用户指南/账号管理/使用DMS管理MongoDB数据库用户.md#)
 
