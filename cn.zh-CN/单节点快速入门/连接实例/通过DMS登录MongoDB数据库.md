@@ -2,9 +2,15 @@
 
 您可以通过阿里云的[数据管理服务DMS](https://help.aliyun.com/document_detail/47550.html)登录MongoDB数据库。使用DMS您可以更便捷地对MongoDB数据库进行管理。
 
-## 前提条件 {#section_nlw_mz4_tgb .section}
+## 注意事项 {#section_tqx_53v_cgb .section}
 
-已将DMS服务器的IP地址加入至 MongoDB 实例的白名单中，详情请参考[设置白名单](cn.zh-CN/单节点快速入门/设置白名单.md#)。
+通过DMS登录MongoDB实例的数据库时，须使用MongoDB实例的内网连接地址，暂不支持公网连接地址。
+
+## 准备工作 {#section_nlw_mz4_tgb .section}
+
+将DMS服务器的IP地址加入至MongoDB实例的白名单中，详情请参考[设置白名单](cn.zh-CN/单节点快速入门/设置白名单.md#)。
+
+**说明：** 如您已经将DMS服务器的IP地址加入至MongoDB实例的白名单中，可跳过此步骤。
 
 |MongoDB实例的网络类型|DMS服务器的IP地址|
 |:-------------|:----------|
@@ -18,10 +24,6 @@
 
  |
 
-## 注意事项 {#section_tqx_53v_cgb .section}
-
-通过DMS登录MongoDB实例的数据库时，须使用MongoDB实例的内网连接地址，暂不支持公网连接地址。
-
 ## 操作步骤 {#section_wtq_x3v_cgb .section}
 
 1.  登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)。
@@ -30,12 +32,12 @@
 4.  找到目标实例，单击实例ID。
 5.  单击左侧导航栏的**数据库连接**，获取 Primary 节点的内网连接地址。
 
-    ![MongoDB内网连接地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154996124634538_zh-CN.png)
+    ![MongoDB内网连接地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154996352734538_zh-CN.png)
 
 6.  单击右上角的**登录数据库**，跳转至数据管理控制台页面。
 7.  在数据管理控制台页面，填写如下信息登录MongoDB数据库。
 
-    ![DMS登录MongoDB页面](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154996124613740_zh-CN.png)
+    ![DMS登录MongoDB页面](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23695/154996352713740_zh-CN.png)
 
     -   网络地址及端口：填入 Primary 节点的内网连接地址。
     -   数据库用户名：默认为 root 。
@@ -43,5 +45,9 @@
     -   密码：数据库登录密码，如忘记密码可[重置密码](cn.zh-CN/单节点快速入门/设置密码.md#)。
 8.  单击**登录**。
 
-更多关于DMS中MongoDB数据库的相关操作介绍请参考：[DMS for MongoDB](https://help.aliyun.com/document_detail/47683.html)。
+## 更多信息 {#section_zsr_lf2_qgb .section}
+
+建议在生产环境中不要直接使用 root 用户登录数据库。您可以根据业务需求，创建用户并分配权限，详情请参考[使用DMS管理MongoDB数据库用户](../../../../../cn.zh-CN/用户指南/账号管理/使用DMS管理MongoDB数据库用户.md#)。
+
+**说明：** 关于DMS中MongoDB数据库的更多相关操作介绍请参考[DMS for MongoDB](https://help.aliyun.com/document_detail/47683.html)。
 
