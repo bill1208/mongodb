@@ -24,14 +24,12 @@
 |迁移方案|适用场景|
 |:---|:---|
 |[Azure Cosmos DB API for MongoDB 迁移到阿里云](../../../../../intl.zh-CN/最佳实践/Azure Cosmos DB API for MongoDB 迁移到阿里云.md#)|-|
-|[使用DTS将腾讯云MongoDB数据库迁移至阿里云](intl.zh-CN/用户指南/数据迁移/第三方云迁移到阿里云/使用DTS将腾讯云MongoDB数据库迁移至阿里云.md#)|数据库版本为3.2版本的腾讯云MongoDB副本集实例迁移至阿里云|
 |[腾讯云MongoDB数据库迁移至阿里云](intl.zh-CN/用户指南/数据迁移/第三方云迁移到阿里云/腾讯云MongoDB数据库迁移至阿里云.md#)|数据库版本为3.2或3.6版本的腾讯云MongoDB实例迁移至阿里云|
 |[华为云文档数据库迁移至阿里云](intl.zh-CN/用户指南/数据迁移/第三方云迁移到阿里云/华为云文档数据库迁移至阿里云.md#)|华为云文档数据库单节点实例或副本集实例迁移至阿里云|
 
 ## 云数据库MongoDB实例间的数据迁移 {#section_gvb_nyp_dgb .section}
 
--   [副本集实例迁移至分片集群实例](intl.zh-CN/用户指南/数据迁移/MongoDB实例间迁移/副本集实例迁移至分片集群实例.md#)
--   [单节点实例迁移至副本集或分片集群实例](intl.zh-CN/用户指南/数据迁移/MongoDB实例间迁移/单节点实例迁移至副本集或分片集群实例.md#)
+[副本集实例迁移至分片集群实例](intl.zh-CN/用户指南/数据迁移/MongoDB实例间迁移/副本集实例迁移至分片集群实例.md#)
 
 ## 将云数据库MongoDB迁移到自建/本地MongoDB数据库 {#section_swy_4yp_dgb .section}
 
