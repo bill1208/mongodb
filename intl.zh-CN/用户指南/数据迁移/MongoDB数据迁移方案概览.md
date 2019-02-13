@@ -21,11 +21,7 @@
 
 ## 第三方云迁移至阿里云 {#section_im3_jyp_dgb .section}
 
-|迁移方案|适用场景|
-|:---|:---|
-|[Azure Cosmos DB API for MongoDB 迁移到阿里云](../../../../../intl.zh-CN/最佳实践/Azure Cosmos DB API for MongoDB 迁移到阿里云.md#)|-|
-|[腾讯云MongoDB数据库迁移至阿里云](intl.zh-CN/用户指南/数据迁移/第三方云迁移到阿里云/腾讯云MongoDB数据库迁移至阿里云.md#)|数据库版本为3.2或3.6版本的腾讯云MongoDB实例迁移至阿里云|
-|[华为云文档数据库迁移至阿里云](intl.zh-CN/用户指南/数据迁移/第三方云迁移到阿里云/华为云文档数据库迁移至阿里云.md#)|华为云文档数据库单节点实例或副本集实例迁移至阿里云|
+[Azure Cosmos DB API for MongoDB 迁移到阿里云](../../../../../intl.zh-CN/最佳实践/Azure Cosmos DB API for MongoDB 迁移到阿里云.md#)
 
 ## 云数据库MongoDB实例间的数据迁移 {#section_gvb_nyp_dgb .section}
 
