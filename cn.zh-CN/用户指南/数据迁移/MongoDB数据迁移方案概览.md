@@ -4,7 +4,7 @@
 
 ## MongoDB数据迁移概述 {#section_s1y_xz2_qgb .section}
 
--   通过使用阿里云[数据传输服务（DTS）](https://help.aliyun.com/document_detail/26592.html)工具，您可以实现MongoDB数据库的全量迁移和增量迁移，其中增量迁移可以在不影响业务的情况下平滑地将MongoDB数据库迁移上云。
+-   通过使用阿里云[数据传输服务（DTS）](https://help.aliyun.com/document_detail/26592.html)工具，您可以实现MongoDB数据库的全量数据迁移和增量数据迁移，其中增量数据迁移可以在不影响业务的情况下平滑地将MongoDB数据库迁移上云。
 -   云数据库MongoDB支持使用官方的 Mongodump 和 Mongorestore 工具全量迁移数据库。
 -   另外，云数据库MongoDB还支持通过物理备份文件和逻辑备份文件两种途径，将云上数据迁移到本地数据库。
 
@@ -34,6 +34,7 @@
 
 -   [副本集实例迁移至分片集群实例](cn.zh-CN/用户指南/数据迁移/MongoDB实例间迁移/副本集实例迁移至分片集群实例.md#)
 -   [单节点实例迁移至副本集或分片集群实例](cn.zh-CN/用户指南/数据迁移/MongoDB实例间迁移/单节点实例迁移至副本集或分片集群实例.md#)
+-   [使用DTS工具跨阿里云账号迁移MongoDB数据库](cn.zh-CN/用户指南/数据迁移/使用DTS工具跨阿里云账号迁移MongoDB数据库.md#)
 
 ## 将云数据库MongoDB迁移到自建/本地MongoDB数据库 {#section_swy_4yp_dgb .section}
 
