@@ -2,7 +2,7 @@
 
 云数据库MongoDB支持以下类型的SDK。
 
--   [Java SDK](https://developer.aliyun.com/tools/sdk?1#/java) 
+-   [Java SDK](https://dwz.cn/s6gmSDYI) 
 -   [Python SDK](https://developer.aliyun.com/tools/sdk#/python)
 -   [PHP SDK](https://developer.aliyun.com/tools/sdk?#/php)
 -   [.NET SDK](https://developer.aliyun.com/tools/sdk?#/dotnet)
