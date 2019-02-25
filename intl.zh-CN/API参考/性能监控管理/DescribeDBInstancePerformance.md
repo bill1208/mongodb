@@ -19,13 +19,13 @@
 -   单节点实例只能传入Primary节点
 
  |
-|Key|String|是|性能指标，多个用英文半角“,”分隔，请参见[性能参数表](intl.zh-CN/API参考/附表/性能监控表.md#)。|
+|Key|String|是|性能指标，多个用英文半角“,”分隔，请参见[性能参数表](cn.zh-CN/API参考/附表/性能监控表.md#)。|
 
 ## 返回参数 {#section_a1r_4cx_kfb .section}
 
 |名称|类型|描述|
 |:-|:-|:-|
-|公共返回参数|-|详见[公共返回参数](intl.zh-CN/API参考/公共参数.md#)。|
+|公共返回参数|-|详见[公共返回参数](cn.zh-CN/API参考/公共参数.md#)。|
 |DBInstanceId|String|实例ID。|
 |Engine|String|数据库类型。|
 |StartTime|String|查询开始时间，格式：YYYYMM-DD’T’HH:mmZ，如2011- 05-30T03:29Z。|

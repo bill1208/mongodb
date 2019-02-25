@@ -10,20 +10,20 @@
 
 ## 数据库账号权限要求 {#section_oyv_j2l_5fb .section}
 
-|迁移类型|全量数据迁移|
-|:---|:-----|
+|实例类型|账号权限|
+|:---|:---|
 |Azure Cosmos DB|read|
 |目的MongoDB实例|readWrite|
 
 ## 环境准备 {#section_y4p_ztk_5fb .section}
 
-1.  创建云数据库MongoDB实例，详情请参考[创建实例](../../../../intl.zh-CN/副本集快速入门/创建实例.md#)。
+1.  创建云数据库MongoDB实例，详情请参考[创建实例](../../../../../cn.zh-CN/副本集快速入门/创建副本集实例.md#)。
 
     **说明：** 
 
     -   实例的存储空间要大于Azure Cosmos DB。
     -   实例的数据库版本选用3.4。
-2.  设置阿里云MongoDB数据库的数据库密码，详情请参考[设置密码](../../../../intl.zh-CN/用户指南/账号管理/重置密码.md#)。
+2.  设置阿里云MongoDB数据库的数据库密码，详情请参考[设置密码](../../../../../cn.zh-CN/用户指南/账号管理/重置密码.md#)。
 3.  在某个服务器上安装MongoDB程序，详情请参考[安装MongoDB](https://docs.mongodb.com/manual/administration/install-community/)。
 
     **说明：** 
@@ -56,7 +56,7 @@
 
     等待备份完成，Azure Cosmos DB的数据库将备份至当前目录下dump文件夹中。
 
-7.  获取阿里云MongoDB数据库的Primary节点连接地址，详情请参考[实例连接说明](../../../../intl.zh-CN/副本集快速入门/连接实例/副本集实例连接说明.md#)。
+7.  获取阿里云MongoDB数据库的Primary节点连接地址，详情请参考[实例连接说明](../../../../../cn.zh-CN/副本集快速入门/连接实例/副本集实例连接说明.md#)。
 8.  在安装有MongoDB服务的Linux服务器上执行以下语句将数据库数据全部导入至阿里云MongoDB数据库。
 
     ```

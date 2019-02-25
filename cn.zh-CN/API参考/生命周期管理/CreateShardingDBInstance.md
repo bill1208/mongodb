@@ -31,10 +31,10 @@
 |
 |Mongos.N.Class|String|是|mongos节点的规格。一个分片集群实例中mongos节点数量为2~32个。
 
-详情，请参见[实例规格附表](../../../../intl.zh-CN/产品简介/实例规格.md#table_qdv_yvz_qfb)。
+详情，请参见[实例规格附表](../../../../../cn.zh-CN/产品简介/实例规格.md#table_qdv_yvz_qfb)。
 
 |
-|ReplicaSet.N.Class|String|是|shard节点的规格。详情，请参见[实例规格附表](../../../../intl.zh-CN/产品简介/实例规格.md#table_qdv_yvz_qfb)。
+|ReplicaSet.N.Class|String|是|shard节点的规格。详情，请参见[实例规格附表](../../../../../cn.zh-CN/产品简介/实例规格.md#table_qdv_yvz_qfb)。
 
 一个分片集群实例中shard节点数量为2~32个。
 
@@ -85,5 +85,5 @@
 
 |名称|类型|描述|
 |--|--|--|
-|公共返回参数|-|详情，请参见[公共参数](intl.zh-CN/API参考/公共参数.md#)。|
+|公共返回参数|-|详情，请参见[公共参数](cn.zh-CN/API参考/公共参数.md#)。|
 

@@ -52,7 +52,7 @@ MongoDB provides native backup utilities that you can use to migrate Azure Cosmo
     mongodump --host <HOST>:10255 --authenticationDatabase admin -u <USERNAME> -p <PRIMARY PASSWORD> --ssl --sslAllowInvalidCertificates
     ```
 
-    Note: Replace <HOST\>, <USERNAME\>, and <PRIMARY PASSWORD\> with the corresponding values shown in the [Azure connection information](#fig_qbq_fy5_vfb) figure.
+    Note: Replace <HOST\>, <USERNAME\>, and <PRIMARY PASSWORD\> with the corresponding values shown in the [Azure connection information](#) figure.
 
     After the backup is complete, backups of the Azure Cosmos DB are stored in the dump folder.
 

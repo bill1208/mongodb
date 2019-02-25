@@ -26,7 +26,7 @@
 
 |名称|类型|描述|
 |--|--|--|
-|公共返回参数| |详见[公共参数](intl.zh-CN/API参考/公共参数.md#)。|
+|公共返回参数| |详见[公共参数](cn.zh-CN/API参考/公共参数.md#)。|
 |DBInstances|List<DBInstance\>|由DBInstance组成的数组。|
 |DestroyTime |String|实例数据销毁时间：-   包年包月实例释放8天后，数据彻底销毁，且不可找回。
 -   按量付费实例，自欠费日起，实例锁定24小时后将被释放，释放同时数据将全部销毁。
@@ -54,7 +54,7 @@
 |EngineVersion|String|数据库版本。|
 |DBInstanceClass|String|实例规格。|
 |DBInstanceStorage|Integer|实例存储空间。|
-|DBInstanceStatus|String|实例状态，参见[实例状态表](https://www.alibabacloud.com/help/zh/doc-detail/63870.htm)。|
+|DBInstanceStatus|String|实例状态，参见[实例状态表](https://help.aliyun.com/document_detail/63870.html)。|
 |ChargeType|String|实例付费类型：-   PrePaid：预付费，包年包月；
 -   PostPaid：按量付费。
 
