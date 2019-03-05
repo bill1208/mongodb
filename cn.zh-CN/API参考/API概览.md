@@ -7,11 +7,11 @@
 ## 生命周期管理 {#section_xrj_kts_l2b .section}
 
 |API|描述|
-|---|--|
+|:--|:-|
 |[CreateDBInstance](cn.zh-CN/API参考/生命周期管理/CreateDBInstance.md#)|创建副本集实例|
 |[ModifyDBInstanceSpec](cn.zh-CN/API参考/生命周期管理/ModifyDBInstanceSpec.md#)|变配副本集实例|
 |[DeleteDBInstance](cn.zh-CN/API参考/生命周期管理/DeleteDBInstance.md#)|释放实例|
-|[RenewDBInstance](cn.zh-CN/API参考/生命周期管理/RenewDBInstance.md#)|续费副本集实例|
+|[RenewDBInstance](cn.zh-CN/API参考/生命周期管理/RenewDBInstance.md#)|续费实例|
 |[CreateShardingDBInstance](cn.zh-CN/API参考/生命周期管理/CreateShardingDBInstance.md#)|创建分片集群实例|
 |[CreateNode](cn.zh-CN/API参考/生命周期管理/CreateNode.md#)|新增集群实例组件|
 |[DeleteNode](cn.zh-CN/API参考/生命周期管理/DeleteNode.md#)|删除集群实例组件|
