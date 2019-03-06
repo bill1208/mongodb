@@ -1,7 +1,5 @@
 # ModifyDBInstanceSpec {#reference_hvc_4p4_k2b .reference}
 
-## 描述 {#section_idp_r44_k2b .section}
-
 该接口用于变配副本集实例。
 
 ## 输入参数 {#section_k5t_t44_k2b .section}
