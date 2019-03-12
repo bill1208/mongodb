@@ -16,7 +16,7 @@
  |
 |EndTime|String|是| 查询结束时间，必须晚于查询开始时间。
 
- **说明：** 格式为*yyyy-MM-dd*T*HH:mm*Z，例如2011-05-30T12:11Z。
+ 格式为*yyyy-MM-dd*T*HH:mm*Z，例如2011-05-30T12:11Z。
 
  |
 |DBInstanceId|String|是| 实例ID。
