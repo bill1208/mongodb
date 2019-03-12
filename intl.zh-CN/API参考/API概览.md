@@ -2,8 +2,6 @@
 
 本文汇总了云数据库 MongoDB 所有可调用 API，具体接口信息请参阅相关文档。
 
-您可以通过 [OpenAPI Explorer](https://help.aliyun.com/document_detail/74407.html) 可视化地调用云数据库 MongoDB 开放的 API ，查看 API 请求和返回结果。此外， OpenAPI Explorer 会自动生成相应 API 的 SDK 调用示例代码，帮助您快速了解并使用云数据库 MongoDB 的 API 。
-
 ## 生命周期管理 {#section_xrj_kts_l2b .section}
 
 |API|描述|
