@@ -20,7 +20,7 @@
 
         日常测试时，可直接连接 Primary 节点。需要注意的是一旦发生[主备切换](../../../../../cn.zh-CN/用户指南/主备切换/副本集实例设置主备切换.md#)，连接节点的角色将发生变化，从而会对读写操作造成影响。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154891469231535_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/155254272231535_zh-CN.png)
 
         在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
 
@@ -42,13 +42,13 @@
         mongo --host dds-bp**********.mongodb.rds.aliyuncs.com:3717 -u root -p --authenticationDatabase admin
         ```
 
-        命令行提示`Enter password:`时，输入数据库账号对应的密码。忘记密码请参考[设置密码](cn.zh-CN/单节点快速入门/设置密码.md#)。
+        命令行提示`Enter password:`时，输入数据库账号对应的密码。如果忘记了root账号的密码，您可以通过[设置密码](cn.zh-CN/副本集快速入门/设置密码.md#)的方式来重置密码。
 
         **说明：** 输入密码时，密码字符是不可见的。
 
     -   高可用连接方式（推荐）：使用ConnectionStringURI连接数据库，可实现高可用性。确保连接的节点始终为 Primary 节点，不会因为主备切换而影响应用的读写操作。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/154891469234449_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6675/155254272234449_zh-CN.png)
 
         在安装有 Mongo Shell 的本地服务器或ECS上进行连接。
 
@@ -67,7 +67,7 @@
 ## 相关问题 {#section_why_5w4_dgb .section}
 
 -   [排查 Mongo Shell 登录问题](../../../../../cn.zh-CN/产品使用问题/排查 Mongo Shell 登录问题.md#)
--   [排查 MongoDB CPU使用率高的问题](../../../../../cn.zh-CN/最佳实践/排查 MongoDB CPU使用率高的问题.md#)
+-   [排查 MongoDB CPU使用率高的问题](../../../../../cn.zh-CN/最佳实践/排查MongoDB CPU使用率高的问题.md#)
 -   [如何查询及限制连接数](../../../../../cn.zh-CN/产品使用问题/如何查询及限制连接数.md#)
 
 ## 更多信息 {#section_zsr_lf2_qgb .section}
