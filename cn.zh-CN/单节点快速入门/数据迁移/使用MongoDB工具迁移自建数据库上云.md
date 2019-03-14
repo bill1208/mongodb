@@ -49,7 +49,7 @@ MongoDB数据库自带有 Mongodump 和 Mongorestore 工具。通过对这两个
     4.  单击目标实例ID。
     5.  在左侧导航栏，单击**数据库连接**，查看数据库连接信息。
 
-        ![MongoDB单节点查看连接信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/82882/154891639735103_zh-CN.png)
+        ![MongoDB单节点查看连接信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/82882/155254150235103_zh-CN.png)
 
     **说明：** 
 
@@ -88,6 +88,8 @@ MongoDB数据库自带有 Mongodump 和 Mongorestore 工具。通过对这两个
 等待数据迁移完成，根据业务需求选择合适的时间，将业务切换至阿里云MongoDB数据库。
 
 ## 更多信息 {#section_kqs_yjk_pgb .section}
+
+数据库迁移至阿里云MongoDB后，您可以进行连接数据库、管理数据库、根据业务需求管理数据库用户等操作。
 
 -   [通过 Mongo Shell 登录MongoDB数据库](cn.zh-CN/单节点快速入门/连接实例/通过 Mongo Shell 登录MongoDB数据库.md#)
 -   [使用DMS管理MongoDB数据库用户](../../../../../cn.zh-CN/用户指南/账号管理/使用DMS管理MongoDB数据库用户.md#)
