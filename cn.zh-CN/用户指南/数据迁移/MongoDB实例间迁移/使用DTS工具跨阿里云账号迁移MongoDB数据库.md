@@ -1,10 +1,10 @@
 # 使用DTS工具跨阿里云账号迁移MongoDB数据库 {#concept_rzc_lrl_qgb .concept}
 
-本文介绍如何使用[数据传输服务DTS](https://help.aliyun.com/document_detail/26592.html)（Data Transmission Service），实现跨阿里云账号迁移MongoDB数据库。DTS支持全量数据迁移及增量数据迁移MongoDB数据库，使用增量数据迁移可以实现在本地应用不停服的情况下，平滑地完成MongoDB数据库的迁移上云工作。
+本文介绍如何使用[数据传输服务](https://help.aliyun.com/document_detail/26592.html)（Data Transmission Service，简称DTS），实现跨阿里云账号迁移MongoDB数据库。DTS支持全量数据迁移及增量数据迁移，使用增量数据迁移功能可以在本地应用不停服的情况下，平滑地完成MongoDB数据库的迁移上云。
 
 ## 背景信息 {#section_vsj_hsl_qgb .section}
 
-当前DTS暂不支持直接读取对端阿里云账号下的MongoDB实例信息，本文为您介绍当需要进行跨阿里云账号迁移MongoDB数据库时，如何使用DTS工具，通过将源实例作为**有公网IP的自建数据库**的方法，完成全量数据迁移或增量数据迁移。
+本文为您介绍当需要进行跨阿里云账号迁移MongoDB数据库时，如何使用DTS工具，通过将源实例作为**有公网IP的自建数据库**的方法，完成全量数据迁移或增量数据迁移。
 
 ## 前提条件 {#section_tql_qpw_pgb .section}
 
@@ -13,11 +13,11 @@
     **说明：** 使用DTS迁移单节点实例时，不支持[增量数据迁移](#section_zjf_5fs_zfb)。
 
 -   源实例的数据库版本须为3.2或3.4版本，暂不支持4.0版本。4.0版本的源实例请参考[ZH-CN\_TP\_6683.md\#](cn.zh-CN/副本集快速入门/数据迁移/使用MongoDB工具迁移自建数据库上云.md#)。
--   目标实例的存储空间须大于源实例的存储空间。
+-   目标实例的存储空间需大于源实例的已使用存储空间。
 
 ## 注意事项 {#section_a3z_x11_kfb .section}
 
-为避免影响您正常业务的使用，请在业务低峰期进行数据迁移。
+为避免影响您的正常业务，请在业务低峰期进行数据迁移。
 
 ## 费用说明 {#section_m3c_t5f_cgb .section}
 
@@ -56,7 +56,7 @@
 ## 迁移前源实例准备工作 {#section_ffj_jhm_qgb .section}
 
 1.  使用源实例所属的阿里云账号，登录[MongoDB管理控制台](https://mongodb.console.aliyun.com/)。
-2.  为源实例申请公网连接地址，详情请参考[申请公网连接地址](cn.zh-CN/用户指南/管理网络连接类型/申请公网连接地址.md#)。
+2.  为源实例申请公网连接地址，详情请参考[申请公网连接地址](cn.zh-CN/用户指南/管理网络连接/申请公网连接地址.md#)。
 3.  在[DTS IP段](https://help.aliyun.com/document_detail/84900.html)文档中，根据目标实例的地域信息，将数据迁移所需放通的DTS IP地址段加入至源实例的白名单中，详情请参考[设置白名单](cn.zh-CN/用户指南/数据安全性/设置白名单.md#)。
 
     例如，源实例的地域为杭州，目标实例的地域为深圳，那么，源实例需要将深圳地区的DTS IP地址段加入白名单中。
@@ -78,7 +78,7 @@
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![跨阿里云账号MongoDB源目库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155047872238564_zh-CN.png)
+    ![跨阿里云账号MongoDB源目库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155419251338564_zh-CN.png)
 
     |源库及目标库信息说明表|
     |:----------|
@@ -107,7 +107,7 @@
 
 6.  选择迁移对象及迁移类型。
 
-    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155047872238566_zh-CN.png)
+    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155419251338566_zh-CN.png)
 
     |迁移对象及迁移类型|
     |:--------|
@@ -117,7 +117,7 @@
 
     -   如果需要进行不停机迁移，迁移类型同时选择**全量数据迁移**和**增量数据迁移**。
  |
-    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![向右箭头](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83046/155047872237966_zh-CN.png)移动到**已选择对象**框。
+    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![向右箭头](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83046/155419251337966_zh-CN.png)移动到**已选择对象**框。
     -   迁移对象选择的粒度可以为：库、collection/function 两个粒度。
     -   默认情况下，迁移对象迁移到MongoDB实例后，对象名跟源实例一致。
 
@@ -142,7 +142,7 @@
 
         迁移任务不会自动结束，观察迁移任务的状态显示为**增量迁移无延迟**的状态时，将源库停写几分钟，等待增量迁移再次进入**增量迁移无延迟**状态，手动停止迁移任务。
 
-        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155047872238567_zh-CN.png)
+        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155419251338567_zh-CN.png)
 
 
 根据业务需求选择合适的时间，将业务切换至目标MongoDB实例中。
