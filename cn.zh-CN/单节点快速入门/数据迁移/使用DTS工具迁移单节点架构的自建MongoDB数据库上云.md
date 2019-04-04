@@ -10,6 +10,7 @@
 
 ## 注意事项 {#section_a3z_x11_kfb .section}
 
+-   不支持迁移admin数据库。
 -   单节点架构的自建MongoDB数据库，须提前开启oplog才可以使用DTS增量数据迁移功能，详情请参考[增量数据迁移前的准备工作](#section_vqd_r51_dhb)。
 -   为避免影响您的正常业务使用，请在业务低峰期进行数据迁移。
 
@@ -89,7 +90,7 @@
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![MongoDB迁移源目数据库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155297730334129_zh-CN.png)
+    ![MongoDB迁移源目数据库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155437204034129_zh-CN.png)
 
     |源库及目标库信息说明表|
     |:----------|
@@ -120,7 +121,9 @@
     -   如果您的自建MongoDB数据库进行了白名单安全设置，您需要在**源库信息**栏目中，单击**获取DTS IP段**来获取到DTS服务器的IP地址，并将获取到的IP地址加入自建MongoDB数据库的白名单安全设置中。
 6.  选择迁移对象及迁移类型。
 
-    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155297730338327_zh-CN.png)
+    **说明：** 不支持迁移admin数据库。
+
+    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155437204038327_zh-CN.png)
 
     |迁移对象及迁移类型|
     |:--------|
@@ -158,7 +161,7 @@
 
         迁移任务不会自动结束，观察迁移任务的状态显示为**增量迁移无延迟**的状态时，将源库停写几分钟，等待增量迁移再次进入**增量迁移无延迟**状态，手动停止迁移任务。
 
-        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155297730333674_zh-CN.png)
+        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155437204033674_zh-CN.png)
 
 
 检查校验数据无误后即可将业务切换至云数据库MongoDB实例。
