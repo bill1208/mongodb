@@ -19,6 +19,8 @@
 
 为避免影响您的正常业务，请在业务低峰期进行数据迁移。
 
+不支持迁移admin数据库，即使被选择为迁移对象，该库中的数据也不会被迁移。
+
 ## 费用说明 {#section_m3c_t5f_cgb .section}
 
 |迁移类型|链路配置费用|公网流量费用|
@@ -78,10 +80,10 @@
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![跨阿里云账号MongoDB源目库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155419251338564_zh-CN.png)
+    ![跨阿里云账号MongoDB源目库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155468892838564_zh-CN.png)
 
-    |源库及目标库信息说明表|
-    |:----------|
+    |配置选项|配置说明|
+    |:---|:---|
     |任务名称|     -   DTS为每个任务自动生成一个任务名称，任务名称没有唯一性要求。
     -   您可以修改任务名称，建议为任务配置具有业务意义的名称，便于后续的任务识别。
  |
@@ -107,17 +109,20 @@
 
 6.  选择迁移对象及迁移类型。
 
-    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155419251338566_zh-CN.png)
+    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155468892838566_zh-CN.png)
 
-    |迁移对象及迁移类型|
-    |:--------|
+    |配置选项|配置说明|
+    |:---|:---|
     |迁移类型|     -   如果只需要进行全量迁移，那么迁移类型选择**全量数据迁移**。
 
 **说明：** 为保障数据一致性，全量数据迁移期间请勿在源实例中写入新的数据。
 
     -   如果需要进行不停机迁移，迁移类型同时选择**全量数据迁移**和**增量数据迁移**。
  |
-    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![向右箭头](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83046/155419251337966_zh-CN.png)移动到**已选择对象**框。
+    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![向右箭头](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83046/155468892937966_zh-CN.png)移动到**已选择对象**框。
+
+**说明：** 不支持迁移admin数据库，即使被选择为迁移对象，该库中的数据也不会被迁移。
+
     -   迁移对象选择的粒度可以为：库、collection/function 两个粒度。
     -   默认情况下，迁移对象迁移到MongoDB实例后，对象名跟源实例一致。
 
@@ -142,7 +147,7 @@
 
         迁移任务不会自动结束，观察迁移任务的状态显示为**增量迁移无延迟**的状态时，将源库停写几分钟，等待增量迁移再次进入**增量迁移无延迟**状态，手动停止迁移任务。
 
-        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155419251338567_zh-CN.png)
+        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123029/155468892938567_zh-CN.png)
 
 
 根据业务需求选择合适的时间，将业务切换至目标MongoDB实例中。
