@@ -90,7 +90,7 @@
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![MongoDB迁移源目数据库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155468799634129_zh-CN.png)
+    ![MongoDB迁移源目数据库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155468833934129_zh-CN.png)
 
     |源库及目标库信息说明表|
     |:----------|
@@ -121,9 +121,7 @@
     -   如果您的自建MongoDB数据库进行了白名单安全设置，您需要在**源库信息**栏目中，单击**获取DTS IP段**来获取到DTS服务器的IP地址，并将获取到的IP地址加入自建MongoDB数据库的白名单安全设置中。
 6.  选择迁移对象及迁移类型。
 
-    **说明：** 不支持迁移admin数据库，即使被选择为迁移对象，该库中的数据也不会被迁移。
-
-    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155468799638327_zh-CN.png)
+    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155468833938327_zh-CN.png)
 
     |迁移对象及迁移类型|
     |:--------|
@@ -137,6 +135,9 @@
 
  |
     |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击移动到**已选择对象**框。
+
+**说明：** 不支持迁移admin数据库，即使被选择为迁移对象，该库中的数据也不会被迁移。
+
     -   迁移对象选择的粒度可以为：库、collection/function 两个粒度。
     -   默认情况下，迁移对象迁移到MongoDB实例后，对象名跟自建MongoDB数据库一致。
 
@@ -161,7 +162,7 @@
 
         迁移任务不会自动结束，观察迁移任务的状态显示为**增量迁移无延迟**的状态时，将源库停写几分钟，等待增量迁移再次进入**增量迁移无延迟**状态，手动停止迁移任务。
 
-        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155468799633674_zh-CN.png)
+        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155468833933674_zh-CN.png)
 
 
 检查校验数据无误后即可将业务切换至云数据库MongoDB实例。
