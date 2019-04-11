@@ -10,9 +10,6 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeBackups|要执行的操作，取值：**DescribeBackups**。
-
- |
 |StartTime|String|是|2019-03-12T12:00Z|查询开始时间，格式为*yyyy-MM-dd*T*HH:mm*Z。
 
  |
@@ -22,6 +19,9 @@
 |DBInstanceId|String|是|dds-bpxxxxxxxx|实例ID。
 
  **说明：** 当本参数传入的是分片集群实例ID时，还需要传入**NodeId**参数。
+
+ |
+|Action|String|否|DescribeBackups|要执行的操作，取值：**DescribeBackups**。
 
  |
 |NodeId|String|否|d-bpxxxxxxxx|分片集群实例中Shard节点ID。
@@ -89,7 +89,7 @@
 |└BackupSize|Long|335520510|备份文件大小，单位为Byte。
 
  |
-|└BackupStartTime|String|2019-03-13T04:32:42Z|本次备份开始时间，*yyyy-MM-dd*T*HH:mm:ss*Z。
+|└BackupStartTime|String|2019-03-13T04:32:42Z|本次备份开始时间，格式为*yyyy-MM-dd*T*HH:mm:ss*Z。
 
  |
 |└BackupStatus|String|Success|备份状态。
