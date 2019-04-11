@@ -1,53 +1,170 @@
-# DescribeDBInstancePerformance {#reference_j4j_wbx_kfb .reference}
+# DescribeDBInstancePerformance {#doc_api_Dds_DescribeDBInstancePerformance .reference}
 
-该接口用于查询实例性能数据，同时支持副本集实例和分片集群实例。
+调用DescribeDBInstancePerformance接口查询实例性能数据。
 
-## 输入参数 {#section_pd3_bcx_kfb .section}
+## 调试 {#apiExplorer .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是|要执行的操作，取值：DescribeDBInstancePerformance。|
-|DBInstanceId|String|是|实例ID。|
-|RoleID|String|否|实例类型为副本集实例可传入该参数，返回以RoleID的监控数据。|
-|NodeId|String|否| -   Sharding实例类型时需要传入该参数，传入mongos或者shard节点的实例id，查询单个组件的性能情况。
--   单节点实例及副本集实例无需传入该值。
+前往【[API Explorer](https://api.aliyun.com/#product=Dds&api=DescribeDBInstancePerformance)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
- |
-|StartTime|String|是|查询开始时间格式：yyyy-MM-dd’T’HH:mmZ，如：2011-05-30T12:11Z时间格式：格林威志时间。|
-|EndTime|String|是|查询结束时间格式：yyyy-MM-dd’T’HH:mmZ，如：2011-05-30T12:11Z时间格式：格林威志时间。|
-|ReplicaSetRole|String|否| -   实例类型为副本集实例时，传入Primary节点或Secondary节点
--   单节点实例只能传入Primary节点
+## 请求参数 {#parameters .section}
+
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeDBInstancePerformance|要执行的操作，取值：**DescribeDBInstancePerformance**。
 
  |
-|Key|String|是|性能指标，多个用英文半角“,”分隔，请参见[性能参数表](cn.zh-CN/API参考/附表/性能监控表.md#)。|
+|Key|String|是|MongoDB\_DetailedSpaceUsage|性能指标，取值详情请参见[性能参数表](~~64048~~)。
 
-## 返回参数 {#section_a1r_4cx_kfb .section}
+ **说明：** 如需传入多个指标使用英文逗号（,）分隔。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|公共返回参数|-|详见[公共返回参数](cn.zh-CN/API参考/公共参数.md#)。|
-|DBInstanceId|String|实例ID。|
-|Engine|String|数据库类型。|
-|StartTime|String|查询开始时间，格式：YYYYMM-DD’T’HH:mmZ，如2011- 05-30T03:29Z。|
-|EndTime|String|查询结束时间，格式：YYYYMM-DD’T’HH:mmZ，如2011- 05-30T03:29Z，大于查询开始时间。|
-|PerformanceKeys|List<PerformanceKey\>|数组格式：\{perf1, perf2, perf3, …\}。|
+ |
+|StartTime|String|是|2019-03-11T12:30Z|查询开始时间，格式为*yyyy-MM-dd*T*HH:mm*Z。
 
-## PerformanceKey参数 {#section_mw5_wcx_kfb .section}
+ |
+|EndTime|String|是|2019-03-11T12:30Z|查询结束时间，必须晚于查询开始时间，格式为*yyyy-MM-dd*T*HH:mm*Z。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|Key|String|性能参数。|
-|Unit|String|展示单位。|
-|ValueFormat|String|值格式：-   如果是null，则是 VALUE是一个最终值。
--   如果不是null，则需要解析VALUE，以 “&”分隔，如：com\_delete&com\_insert&com\_insert\_select&com\_replace
+ |
+|DBInstanceId|String|是|dds-bpxxxxxxxx|实例ID。
 
-|
-|Values|List<PerformanceValue\>|数组格式：\{value1, value2, …\}。|
+ **说明：** 当本参数传入的是分片集群实例ID时，还需要传入**NodeId**参数。
 
-## 性能参数值列表PerformanceValue {#section_uvq_ddx_kfb .section}
+ |
+|NodeId|String|否|d-bpxxxxxxxx|分片集群实例中Mongos节点ID或Shard节点ID，可用于查询单个节点的性能情况。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|Value|String|性能值。|
-|Date|String|计算日期，格式：”yyyy-MMdd’T’HH:mm:ssZ”。如，2011- 05-30T03:29:00Z。|
+ **说明：** 当**DBInstanceId**参数传入的是分片集群实例ID时，本参数才可用。
+
+ |
+|RoleId|String|否|60xxxxx|实例的节点角色ID，可通过[DescribeReplicaSetRole](~~62134~~)接口查询。
+
+ **说明：** 当**DBInstanceId**参数传入的是单节点实例ID或副本集实例ID时，本参数才可用。
+
+ |
+|ReplicaSetRole|String|否|Primary|副本集实例的节点角色，取值：
+
+ -   Primary：主节点。
+-   Secondary：从节点。
+
+ **说明：** 当**DBInstanceId**参数传入的是单节点实例ID或副本集实例ID时，本参数才可用。
+
+ |
+|AccessKeyId|String|否|LTAIgbTGpxxxxxx|阿里云颁发给用户的访问服务所用的密钥ID。
+
+ |
+
+## 返回参数 {#resultMapping .section}
+
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|267F98DC-367D-4F20-B137-8B5B664D1C5D|请求ID。
+
+ |
+|StartTime|String|2019-03-11T12:20Z|查询开始时间，格式为*yyyy-MM-dd*T*HH:mm*Z。
+
+ |
+|EndTime|String|2019-03-11T12:30Z|查询结束时间，格式为*yyyy-MM-dd*T*HH:mm*Z。
+
+ |
+|PerformanceKeys| | |性能指标信息列表。
+
+ |
+|└Key|String|MongoDB\_DetailedSpaceUsage|性能指标。
+
+ |
+|└PerformanceValues| | |性能指标值列表。
+
+ |
+|└Date|String|2019-03-11T12:21:51Z|性能指标值产生的日期。
+
+ |
+|└Value|String|0.6|性能指标值。
+
+ |
+|└Unit|String|MB|展示单位。
+
+ |
+|└ValueFormat|String|cpu\_usage|性能指标值的格式。如果该性能指标包含多个字段，通常以**&**分隔。
+
+ 例如查询磁盘空间使用量，返回的ValueFormat即为**ins\_size&data\_size&log\_size**。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+http(s)://mongodb.aliyuncs.com/?Action=DescribeDBInstancePerformance
+&Key=MongoDB_DetailedSpaceUsage
+&StartTime=2019-03-11T12:20Z
+&EndTime=2019-03-11T12:30Z
+&DBInstanceId=dds-bpxxxxxxxx
+&<公共请求参数>
+
+```
+
+正常返回示例
+
+`XML` 格式
+
+``` {#xml_return_success_demo}
+<DescribeDBInstancePerformanceResponse>
+  <RequestId>267F98DC-367D-4F20-B137-8B5B664D1C5D</RequestId>
+  <PerformanceKeys>
+    <PerformanceKey>
+      <Key>MongoDB_DetailedSpaceUsage</Key>
+      <PerformanceValues>
+        <PerformanceValue>
+          <Value>1768&amp;1282&amp;486</Value>
+          <Date>2019-03-11T12:21:51Z</Date>
+        </PerformanceValue>
+        <PerformanceValue>
+          <Value>1768&amp;1282&amp;486</Value>
+          <Date>2019-03-11T12:26:52Z</Date>
+        </PerformanceValue>
+      </PerformanceValues>
+      <Unit>MB</Unit>
+      <ValueFormat>ins_size&amp;data_size&amp;log_size</ValueFormat>
+    </PerformanceKey>
+  </PerformanceKeys>
+  <EndTime>2019-03-11T12:30Z</EndTime>
+  <StartTime>2019-03-11T12:20Z</StartTime>
+</DescribeDBInstancePerformanceResponse>
+
+```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
+{
+	"RequestId":"267F98DC-367D-4F20-B137-8B5B664D1C5D",
+	"PerformanceKeys":{
+		"PerformanceKey":[
+			{
+				"Key":"MongoDB_DetailedSpaceUsage",
+				"PerformanceValues":{
+					"PerformanceValue":[
+						{
+							"Value":"1768&1282&486",
+							"Date":"2019-03-11T12:21:51Z"
+						},
+						{
+							"Value":"1768&1282&486",
+							"Date":"2019-03-11T12:26:52Z"
+						}
+					]
+				},
+				"Unit":"MB",
+				"ValueFormat":"ins_size&data_size&log_size"
+			}
+		]
+	},
+	"EndTime":"2019-03-11T12:30Z",
+	"StartTime":"2019-03-11T12:20Z"
+}
+```
+
+## 错误码 { .section}
+
+[查看本产品错误码](https://error-center.aliyun.com/status/product/Dds)
 
