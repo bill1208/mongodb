@@ -94,7 +94,7 @@
 |PageNumber|Integer|1|页码。
 
  |
-|PageRecordCount|Integer|30|当前页中日志记录个数。
+|PageRecordCount|Integer|30|当前页最大记录数。
 
  |
 |RequestId|String|3278BEB8-503B-4E46-8F7E-D26E040C9769|请求ID。
