@@ -14,7 +14,7 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeAuditLogFilter|要执行的操作，取值： **ModifyAuditLogFilter**。
+|Action|String|是|DescribeAuditLogFilter|要执行的操作，取值： **DescribeAuditLogFilter**。
 
  |
 |DBInstanceId|String|是|dds-bpxxxxxxxx|实例ID。
