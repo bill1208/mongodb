@@ -4,13 +4,13 @@
 
 ## 前提条件 {#section_kdp_sxp_5fb .section}
 
--   该方法仅适用于云数据库MongoDB 副本集实例。
+-   该方法仅适用于云数据库MongoDB副本集实例。
 -   实例的存储引擎为 WiredTiger 或 RocksDB。
 
-    **说明：** 如实例的存储引擎为 TerarkDB ，请使用[逻辑备份恢复至自建数据库](intl.zh-CN/用户指南/数据恢复/逻辑备份恢复至自建数据库.md#)。
+    **说明：** 如果实例的存储引擎为 TerarkDB ，请使用[逻辑备份恢复至自建数据库](intl.zh-CN/用户指南/数据恢复/逻辑备份恢复至自建数据库.md#)。
 
 -   实例的存储引擎为 RocksDB 时，您需要自行编译安装带有 RocksDB 存储引擎的 MongoDB 应用程序。
--   为保障MongoDB数据库的兼容性，自建MongoDB的版本要求如下。
+-   为保障MongoDB数据库的兼容性，自建MongoDB的版本要求如下：
 
     |MongoDB实例的数据库版本|要求本地自建MongoDB数据库版本|
     |:--------------|:-----------------|
@@ -19,27 +19,57 @@
     |4.0版本|4.0版本|
 
 
-## 准备工作 {#section_lxg_5xp_5fb .section}
+## 注意事项 {#section_lcw_2kt_jfj .section}
 
-以下演示环境服务器的系统为Linux。（已安装对应版本的 MongoDB 服务，安装方法请参见MongoDB官方文档。）
+目前物理备份集文件有两种格式： tar 压缩包 （.tar.gz 后缀）和 xbstream 文件包 \(\_qp.xb 后缀\)，对应的解压的操作步骤有所不同，详情请参考[下载及解压物理备份文件](#section_lxg_5xp_5fb)。
 
-下载及解压MongoDB物理备份文件。
+**说明：** 自2019年3月26日后新建的实例，物理备份文件的格式为 xbstream 文件包 \(\_qp.xb 后缀\)。
 
-1.  [下载MongoDB物理备份文件](intl.zh-CN/用户指南/数据恢复/物理备份恢复至自建数据库/副本集实例下载物理备份.md#)。
-2.  将文件解压至本地服务器上MongoDB所在的data目录（**需确保是空的**）。
+## 下载及解压物理备份文件 {#section_lxg_5xp_5fb .section}
 
-    假设将/path/to/mongo作为MongoDB物理恢复操作的所在目录。
+以下演示环境服务器的系统为Ubuntu 16.04。
 
-    ```
-    cd /path/to/mongo/data/
-    rm -rf *
-    ```
+**说明：** 
 
-3.  将下载的MongoDB物理备份文件复制至/path/to/mongo/data/目录中并执行解压操作。
+-   该服务器已安装对应版本的 MongoDB 服务，安装方法请参见MongoDB官方文档。
+-   该服务器将/path/to/mongo/data作为MongoDB物理恢复操作的数据库所在目录（该目录是空的）。
 
-    ```
-    tar xzvf hins_xxx.tar.gz 
-    ```
+**操作步骤**
+
+1.  [下载MongoDB物理备份文件](intl.zh-CN/用户指南/数据恢复/物理备份恢复至自建数据库/副本集实例下载物理备份.md#)，您也可以通过`wget`命令下载。
+2.  将下载的MongoDB物理备份文件复制至/path/to/mongo/data/目录中。
+3.  对物理备份文件执行解压操作。
+    -   当下载的物理备份文件后缀为 .tar.gz 时，例如文件名为hins20190412.tar.gz，请使用下述方法解压。
+
+        ```
+        cd /path/to/mongo/data/
+        tar xzvf hins20190412.tar.gz 
+        ```
+
+    -   当下载的物理备份文件后缀为 \_qp.xb 时，例如文件名为hins20190412\_qp.xb，请使用下述方法解压。
+        1.  安装percona-xtrabackup工具。
+
+            ``` {#codeblock_59t_ecw_55f}
+            apt-get update
+            apt install percona-xtrabackup
+            ```
+
+        2.  前往[QuickLZ网站](http://www.quicklz.com/)，下载qpress工具。
+        3.  解压并安装qpress工具。
+
+            ``` {#codeblock_3si_bwc_uab}
+            tar xvf qpress-11-linux-x64.tar
+            chmod 775 qpress
+            cp qpress /usr/bin
+            ```
+
+        4.  解压物理备份文件，例如数据库备份文件名为hins20190412\_qp.xb。
+
+            ``` {#codeblock_mtu_bu6_9om}
+            cd /path/to/mongo/data/
+            cat hins20190412_qp.xb | xbstream -x -v -C /path/to/mongo/data
+            innobackupex --decompress --remove-original /path/to/mongo/data
+            ```
 
 
 ## 以单节点模式恢复MongoDB物理备份的数据 {#section_pwz_yxp_5fb .section}
@@ -138,7 +168,7 @@
     ```
     use admin
     db.shutdownServer()
-    
+    					
     ```
 
 4.  修改/path/to/mongo/目录下的配置文件mongod.conf，添加replication相关配置。详细命令用法请参考MongoDB官方文档[部署副本集](https://docs.mongodb.com/manual/tutorial/deploy-replica-set/index.html)。
