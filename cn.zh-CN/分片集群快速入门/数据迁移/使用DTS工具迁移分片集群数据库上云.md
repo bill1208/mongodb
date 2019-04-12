@@ -5,11 +5,16 @@
 ## 前提条件 {#section_jx1_5wy_ngb .section}
 
 -   本地MongoDB数据库的各Shard节点具有公网地址或服务端口开放至公网。
--   本地MongoDB数据库版本为3.2或3.4版本，暂不支持4.0版本。
+-   本地MongoDB数据库版本为3.0、3.2、3.4或3.6版本，暂不支持4.0版本。
+
+    **说明：** 4.0版本的本地MongoDB数据库请参考[使用MongoDB工具迁移自建数据库上云](cn.zh-CN/分片集群快速入门/数据迁移/使用MongoDB工具迁移自建数据库上云.md#)。
+
 -   阿里云MongoDB实例的存储空间应大于本地MongoDB数据库的存储空间。
 
 ## 注意事项 {#section_dww_lmr_zfb .section}
 
+-   不支持迁移admin数据库，即使被选择为迁移对象，该库中的数据也不会被迁移。
+-   config数据库属于系统内部数据库，如无特殊需求，请勿迁移config数据库。
 -   阿里云MongoDB实例支持的数据库版本为3.4版本和4.0版本。
 -   阿里云MongoDB实例支持的存储引擎为 WiredTiger 、 RocksDB 和 TerarkDB。
 -   为避免影响您的正常业务使用，请在业务低峰期进行数据迁移。
@@ -48,7 +53,7 @@
 
 为避免影响您的正常业务使用，请在业务低峰期进行操作。
 
-1.  关闭本地MongoDB数据库的均衡器 Balancer，详情请参考[关闭Mongodb分片集群均衡器](../../../../../cn.zh-CN/最佳实践/管理MongoDB均衡器Balancer .md#section_k3j_4wl_2gb) 。
+1.  关闭本地MongoDB数据库的均衡器 Balancer，详情请参考[关闭Mongodb分片集群均衡器](../cn.zh-CN/最佳实践/管理MongoDB均衡器Balancer .md#section_k3j_4wl_2gb) 。
 2.  清除本地MongoDB数据库中，因块迁移失败产生的孤立文档。详情请参考[cleanupOrphaned](https://docs.mongodb.com/manual/reference/command/cleanupOrphaned/)。
 
     示例：
@@ -75,7 +80,7 @@
 
     -   该操作需要在每个 Shard 节点中执行。
     -   如未清除孤立文档，可能影响迁移的性能。且在迁移过程中可能会遇到 \_id 冲突，导致迁移了错误的数据
-3.  根据业务需要设置数据分片，详情请参考[设置数据分片以充分利用Shard性能](../../../../../cn.zh-CN/最佳实践/设置数据分片以充分利用Shard性能.md#)（可选）。
+3.  根据业务需要设置数据分片，详情请参考[设置数据分片以充分利用Shard性能](../cn.zh-CN/最佳实践/设置数据分片以充分利用Shard性能.md#)（可选）。
 
     **说明：** 您可以迁移前，在目标MongoDB实例中建立需要数据分片的数据库和集合，配置数据分片。也可以在迁移后配置数据分片。
 
@@ -87,7 +92,7 @@
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/154822668934677_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/155506281934677_zh-CN.png)
 
     |源库及目标库信息说明表|
     |:----------|
@@ -117,11 +122,11 @@
 
 5.  配置完成后，单击页面右下角的**授权白名单并进入下一步**。
 
-    此步骤会将DTS服务器的IP地址自动添加到目标MongoDB实例的白名单中，用于保障DTS服务器能够正常连接MongoDB实例。迁移完成后如不再需要可手动删除，详情请参考[白名单设置](../../../../../cn.zh-CN/用户指南/数据安全性/设置白名单.md#)。
+    此步骤会将DTS服务器的IP地址自动添加到目标MongoDB实例的白名单中，用于保障DTS服务器能够正常连接MongoDB实例。迁移完成后如不再需要可手动删除，详情请参考[白名单设置](../cn.zh-CN/用户指南/数据安全性/设置白名单.md#)。
 
 6.  选择**迁移对象**和**迁移类型**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/154822668934699_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/155506281934699_zh-CN.png)
 
     |迁移对象及迁移类型|
     |:--------|
@@ -131,7 +136,12 @@
 
     -   如果需要进行不停机迁移，迁移类型同时选择**全量数据迁移**和**增量数据迁移**。
  |
-    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/154822668933712_zh-CN.png)移动到**已选择对象**框
+    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155506281933712_zh-CN.png)移动到**已选择对象**框。
+
+**说明：** 
+
+        -   不支持迁移admin数据库，即使被选择为迁移对象，该库中的数据也不会被迁移。
+        -   config数据库属于系统内部数据库，如无特殊需求，请勿迁移config数据库。
     -   迁移对象选择的粒度可以为：库、collection/function 两个粒度。
     -   默认情况下，对象迁移到MongoDB实例后，对象名跟本地MongoDB数据库一致。
 
@@ -146,7 +156,7 @@
     **说明：** 
 
     -   在迁移任务正式启动之前，会先进行预检查。只有预检查通过后，才能成功启动迁移任务。
-    -   如果预检查失败，单击具体检查项后的![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/154822668933661_zh-CN.png)，查看具体的失败详情。根据失败原因修复后，重新进行预检查。
+    -   如果预检查失败，单击具体检查项后的![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155506281933661_zh-CN.png)，查看具体的失败详情。根据失败原因修复后，重新进行预检查。
 8.  预检查通过后，单击**下一步**。
 9.  在**购买配置确认**页面，选择**链路规格**并勾选**数据传输（按量付费）服务条款**。
 10. 单击**购买并启动**，迁移任务正式开始。
@@ -158,7 +168,7 @@
 
         迁移任务的状态显示为**增量迁移无延迟**，代表数据已同步至最新。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/154822668934686_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/155506281934686_zh-CN.png)
 
 11. 重复第1步到第10步的操作步骤，创建其他Shard节点的迁移任务，并等待所有迁移任务迁移完成。
 
@@ -166,7 +176,7 @@
 
     1.  迁移任务不会自动结束，您可以不停单击**刷新**查看迁移任务的最新状态。当所有Shard节点的迁移任务均显示为**增量迁移无延迟**的状态时，将源库停写几分钟。
     2.  等待所有Shard节点的迁移任务再次进入**增量迁移无延迟**状态手动停止迁移任务。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/154822668934689_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80861/155506281934689_zh-CN.png)
 
 
 检查校验数据无误后即可将业务切换至目标MongoDB实例。
