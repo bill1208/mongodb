@@ -67,11 +67,15 @@
 2.  以副本集的方式后台启动MongoDB服务。
 
     ```
-    mongod --port 27017 --dbpath /var/lib/mongodb --logpath /var/log/mongodb/mongod.log --replSet rs0 --fork
+    mongod --port 27017 --dbpath /var/lib/mongodb --logpath /var/log/mongodb/mongod.log --replSet rs0 --bind_ip 0.0.0.0 --auth --fork
     ```
 
-    **说明：** 该命令使用自建MongoDB数据库中现有的数据库路径`/var/lib/mongodb`和日志存储路径`/var/log/mongodb/mongod.log`。您可以根据自建MongoDB服务器上实际的目录路径自行指定。
+    **说明：** 
 
+    -   该命令使用自建MongoDB数据库中现有的数据库路径`/var/lib/mongodb`和日志存储文件`/var/log/mongodb/mongod.log`。您可以根据自建MongoDB服务器上实际的目录路径自行指定。
+    -   该命令使用0.0.0.0作为MongoDB数据库服务的绑定地址，即允许所有IP地址访问。
+    -   该命令开启了认证功能，用户需要认证后才可以访问数据库。
+    -   迁移结束后可使用kill命令结束该进程。
 3.  使用Mongo Shell登录自建MongoDB服务器，使用如下命令初始化副本集。
 
     ```
@@ -90,10 +94,10 @@
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![MongoDB迁移源目数据库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155468833934129_zh-CN.png)
+    ![MongoDB迁移源目数据库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155503965134129_zh-CN.png)
 
-    |源库及目标库信息说明表|
-    |:----------|
+    |迁移任务配置选项|配置说明|
+    |:-------|:---|
     |任务名称|     -   DTS为每个任务自动生成一个任务名称，任务名称没有唯一性要求。
     -   您可以修改任务名称，建议为任务配置具有业务意义的名称，便于后续的任务识别。
  |
@@ -121,10 +125,10 @@
     -   如果您的自建MongoDB数据库进行了白名单安全设置，您需要在**源库信息**栏目中，单击**获取DTS IP段**来获取到DTS服务器的IP地址，并将获取到的IP地址加入自建MongoDB数据库的白名单安全设置中。
 6.  选择迁移对象及迁移类型。
 
-    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155468833938327_zh-CN.png)
+    ![MongoDB迁移对象迁移类型选择](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6682/155503965138327_zh-CN.png)
 
-    |迁移对象及迁移类型|
-    |:--------|
+    |迁移选项配置|配置说明|
+    |:-----|:---|
     |迁移类型|     -   如果只需要进行全量迁移，那么迁移类型选择**全量数据迁移**。
 
 **说明：** 为保障数据一致性，全量数据迁移期间请勿在自建MongoDB数据库中写入新的数据。
@@ -162,7 +166,7 @@
 
         迁移任务不会自动结束，观察迁移任务的状态显示为**增量迁移无延迟**的状态时，将源库停写几分钟，等待增量迁移再次进入**增量迁移无延迟**状态，手动停止迁移任务。
 
-        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155468833933674_zh-CN.png)
+        ![MongoDB增量迁移无延迟](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/75938/155503965133674_zh-CN.png)
 
 
 检查校验数据无误后即可将业务切换至云数据库MongoDB实例。
