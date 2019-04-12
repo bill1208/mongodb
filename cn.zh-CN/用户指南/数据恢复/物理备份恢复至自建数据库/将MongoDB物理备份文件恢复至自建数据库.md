@@ -67,7 +67,7 @@
 
             ``` {#codeblock_mtu_bu6_9om}
             cd /path/to/mongo/data/
-            cat hins20190412_qp.xb | xbstream -x -v -C /path/to/mongo/data
+            cat hins20190412_qp.xb | xbstream -x -v
             innobackupex --decompress --remove-original /path/to/mongo/data
             ```
 
