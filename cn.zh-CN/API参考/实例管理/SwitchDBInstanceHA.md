@@ -1,6 +1,6 @@
 # SwitchDBInstanceHA {#doc_api_Dds_SwitchDBInstanceHA .reference}
 
-调用SwitchDBInstanceHA接口切换实例中的主备节点。
+调用SwitchDBInstanceHA接口切换MongoDB实例中的主备节点。
 
 调用本接口时，实例状态要求为运行中。
 
