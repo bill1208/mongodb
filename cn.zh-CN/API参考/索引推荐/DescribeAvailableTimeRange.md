@@ -1,6 +1,6 @@
 # DescribeAvailableTimeRange {#doc_api_Dds_DescribeAvailableTimeRange .reference}
 
-调用DescribeAvailableTimeRange接口查询索引分析报告的分析时间段和生成状态。
+调用DescribeAvailableTimeRange接口查询MongoDB实例索引分析报告的分析时间段和生成状态。
 
 调用本接口时，实例必须满足以下条件：
 
@@ -74,7 +74,7 @@
 ``` {#request_demo}
 
 http(s)://mongodb.aliyuncs.com/?Action=DescribeAvailableTimeRange
-DBInstanceId=dds-bpxxxxxxxx
+&InstanceId=dds-bpxxxxxxxx
 &<公共请求参数>
 
 ```
