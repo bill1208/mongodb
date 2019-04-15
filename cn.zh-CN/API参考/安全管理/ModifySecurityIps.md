@@ -1,6 +1,6 @@
 # ModifySecurityIps {#doc_api_Dds_ModifySecurityIps .reference}
 
-调用ModifySecurityIps接口修改实例的IP白名单。
+调用ModifySecurityIps接口修改MongoDB实例的IP白名单。
 
 ## 调试 {#apiExplorer .section}
 
