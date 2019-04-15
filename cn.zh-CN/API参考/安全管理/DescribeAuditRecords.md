@@ -1,6 +1,6 @@
 # DescribeAuditRecords {#doc_api_Dds_DescribeAuditRecords .reference}
 
-调用DescribeAuditRecords接口查询审计日志。
+调用DescribeAuditRecords接口查询MongoDB实例的审计日志。
 
 调用本接口时，实例的审计日志须处于开通状态，否则返回的审计日志内容为空。
 
