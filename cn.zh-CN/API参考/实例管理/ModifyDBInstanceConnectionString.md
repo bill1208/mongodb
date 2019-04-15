@@ -1,6 +1,6 @@
 # ModifyDBInstanceConnectionString {#doc_api_Dds_ModifyDBInstanceConnectionString .reference}
 
-调用ModifyDBInstanceConnectionString接口修改实例的连接地址。
+调用ModifyDBInstanceConnectionString接口修改MongoDB实例的连接地址。
 
 ## 调试 {#apiExplorer .section}
 
