@@ -1,6 +1,6 @@
 # DeleteNode {#doc_api_Dds_DeleteNode .reference}
 
-调用DeleteNode接口删除分片集群实例中的Shard节点或Mongos节点。
+调用DeleteNode接口删除MongoDB分片集群实例中的Shard节点或Mongos节点。
 
 调用本接口时，实例必须满足以下条件：
 
