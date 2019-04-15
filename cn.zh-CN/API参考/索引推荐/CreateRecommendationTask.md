@@ -1,6 +1,6 @@
 # CreateRecommendationTask {#doc_api_Dds_CreateRecommendationTask .reference}
 
-调用CreateRecommendationTask接口创建索引分析任务。
+调用CreateRecommendationTask接口为MongoDB实例创建索引分析任务。
 
 调用该接口时，实例必须满足以下条件：
 
