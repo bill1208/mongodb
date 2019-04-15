@@ -1,6 +1,6 @@
 # DescribeDBInstanceSSL {#doc_api_Dds_DescribeDBInstanceSSL .reference}
 
-调用DescribeDBInstanceSSL接口查询实例的SSL设置详情。
+调用DescribeDBInstanceSSL接口查询MongoDB实例的SSL设置详情。
 
 调用该接口时，实例必须满足以下条件：
 
