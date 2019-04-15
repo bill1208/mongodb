@@ -50,7 +50,7 @@
 ``` {#request_demo}
 
 http(s)://mongodb.aliyuncs.com/?Action=DescribeSecurityIps
-DBInstanceId=dds-bpxxxxxxxx
+&DBInstanceId=dds-bpxxxxxxxx
 &<公共请求参数>
 
 ```
