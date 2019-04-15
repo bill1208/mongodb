@@ -62,7 +62,7 @@
 
 ``` {#request_demo}
 
-http(s)://[Endpoint]/?Action=DescribeParameterModificationHistory
+http(s)://mongodb.aliyuncs.com/?Action=DescribeParameterModificationHistory
 &StartTime=2019-01-01T12:10Z
 &EndTime=2019-01-02T12:10Z
 &DBInstanceId=dds-bpxxxxxxxx
