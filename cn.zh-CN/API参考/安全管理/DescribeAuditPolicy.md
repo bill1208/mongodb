@@ -1,6 +1,6 @@
 # DescribeAuditPolicy {#doc_api_Dds_DescribeAuditPolicy .reference}
 
-调用DescribeAuditPolicy接口查询实例的审计日志是否开启。
+调用DescribeAuditPolicy接口查询MongoDB实例的审计日志是否开启。
 
 调用本接口时，要求实例状态为运行中。
 
