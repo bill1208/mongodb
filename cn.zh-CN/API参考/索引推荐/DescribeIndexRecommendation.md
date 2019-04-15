@@ -1,6 +1,6 @@
 # DescribeIndexRecommendation {#doc_api_Dds_DescribeIndexRecommendation .reference}
 
-调用DescribeIndexRecommendation接口查询索引推荐详情。
+调用DescribeIndexRecommendation接口查询MongoDB实例的索引推荐详情。
 
 实例须满足以下条件，否则该接口调用失败：
 
@@ -138,7 +138,7 @@
 ``` {#request_demo}
 
 http(s)://mongodb.aliyuncs.com/?Action=DescribeIndexRecommendation
-DBInstanceId=dds-bpxxxxxxxx
+&InstanceId=dds-bpxxxxxxxx
 &<公共请求参数>
 
 ```
