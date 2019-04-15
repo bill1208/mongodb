@@ -53,7 +53,7 @@
 ``` {#request_demo}
 
 http(s)://mongodb.aliyuncs.com/?Action=DescribeDBInstanceSSL
-DBInstanceId=dds-bpxxxxxxxx
+&DBInstanceId=dds-bpxxxxxxxx
 &<公共请求参数>
 
 ```
