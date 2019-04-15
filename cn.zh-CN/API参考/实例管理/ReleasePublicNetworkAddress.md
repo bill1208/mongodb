@@ -1,6 +1,6 @@
 # ReleasePublicNetworkAddress {#doc_api_Dds_ReleasePublicNetworkAddress .reference}
 
-调用ReleasePublicNetworkAddress接口释放公网连接地址。
+调用ReleasePublicNetworkAddress接口释放MongoDB实例的公网连接地址。
 
 ## 调试 {#apiExplorer .section}
 
