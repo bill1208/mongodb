@@ -1,6 +1,6 @@
 # DescribeDBInstancePerformance {#doc_api_Dds_DescribeDBInstancePerformance .reference}
 
-调用DescribeDBInstancePerformance接口查询实例性能数据。
+调用DescribeDBInstancePerformance接口查询MongoDB实例性能数据。
 
 ## 调试 {#apiExplorer .section}
 
@@ -94,9 +94,9 @@
 
 ``` {#request_demo}
 
-http(s)://mongodb.aliyuncs.com/?Action=DescribeDBInstancePerformance
+http(s)://[Endpoint]/?Action=DescribeDBInstancePerformance
 &Key=MongoDB_DetailedSpaceUsage
-&StartTime=2019-03-11T12:20Z
+&StartTime=2019-03-11T12:30Z
 &EndTime=2019-03-11T12:30Z
 &DBInstanceId=dds-bpxxxxxxxx
 &<公共请求参数>
