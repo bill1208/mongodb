@@ -1,6 +1,6 @@
 # RestoreDBInstance {#doc_api_Dds_RestoreDBInstance .reference}
 
-调用RestoreDBInstance接口恢复数据至当前实例。
+调用RestoreDBInstance接口恢复数据至当前MongoDB实例。
 
 本接口仅适用于副本集实例，暂不支持单节点实例和分片集群实例。单节点实例可通过[从备份点新建实例](~~55013~~)克隆当前实例，分片集群实例可通过调用[CreateShardingDBInstance](~~61884~~)接口克隆当前实例。
 
