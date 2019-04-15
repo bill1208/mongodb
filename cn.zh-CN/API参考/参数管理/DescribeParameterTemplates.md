@@ -1,6 +1,6 @@
-# DescribeParameterTemplates {#doc_api_1107853 .reference}
+# DescribeParameterTemplates {#doc_api_Dds_DescribeParameterTemplates .reference}
 
-调用DescribeParameterTemplates接口查询默认的参数模板列表。
+调用DescribeParameterTemplates接口查询MongoDB实例默认的参数模板列表。
 
 ## 调试 {#apiExplorer .section}
 
