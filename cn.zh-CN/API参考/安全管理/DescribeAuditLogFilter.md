@@ -1,6 +1,6 @@
 # DescribeAuditLogFilter {#doc_api_Dds_DescribeAuditLogFilter .reference}
 
-调用DescribeAuditLogFilter接口查询审计日志采集的日志类型。
+调用DescribeAuditLogFilter接口查询MongoDB实例审计日志采集的日志类型。
 
 调用本接口时，要求实例状态为运行中。
 
