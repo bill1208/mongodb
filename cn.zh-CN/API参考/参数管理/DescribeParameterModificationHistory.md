@@ -1,6 +1,6 @@
 # DescribeParameterModificationHistory {#doc_api_Dds_DescribeParameterModificationHistory .reference}
 
-调用DescribeParameterModificationHistory接口查询实例参数的修改记录。
+调用DescribeParameterModificationHistory接口查询MongoDB实例参数的修改记录。
 
 ## 调试 {#apiExplorer .section}
 
@@ -62,7 +62,7 @@
 
 ``` {#request_demo}
 
-http(s)://mongodb.aliyuncs.com/?Action=DescribeParameterModificationHistory
+http(s)://[Endpoint]/?Action=DescribeParameterModificationHistory
 &StartTime=2019-01-01T12:10Z
 &EndTime=2019-01-02T12:10Z
 &DBInstanceId=dds-bpxxxxxxxx
