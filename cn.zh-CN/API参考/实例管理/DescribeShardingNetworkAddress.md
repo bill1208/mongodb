@@ -1,6 +1,6 @@
 # DescribeShardingNetworkAddress {#doc_api_Dds_DescribeShardingNetworkAddress .reference}
 
-调用DescribeShardingNetworkAddress接口查询分片集群实例的连接信息。
+调用DescribeShardingNetworkAddress接口查询MongoDB分片集群实例的连接信息。
 
 该接口仅支持分片集群实例。
 
@@ -38,7 +38,7 @@
 |└IPAddress|String|10.140.xxx.xx|IP地址。
 
  |
-|└NetworkAddress|String|s-bpxxxxxxxx.mongodb.rds.aliyuncs.com|域名连接地址。
+|└NetworkAddress|String|s-bpxxxxxxxx.mongodb.rds.aliyuncs.com|连接地址（字符串）。
 
  |
 |└NetworkType|String|VPC|网络类型。
