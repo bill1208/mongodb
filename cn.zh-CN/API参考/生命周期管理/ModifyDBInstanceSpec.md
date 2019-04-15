@@ -1,6 +1,6 @@
 # ModifyDBInstanceSpec {#doc_api_Dds_ModifyDBInstanceSpec .reference}
 
-调用ModifyDBInstanceSpec接口变更MongoDB实例的规格或存储空间。
+调用ModifyDBInstanceSpec接口变更MongoDB副本集实例的规格或存储空间。
 
  **请确保在使用该接口前，已充分了解云数据库MongoDB产品的收费方式和[价格](https://www.alibabacloud.com/zh/product/apsaradb-for-mongodb/pricing)。** 
 
