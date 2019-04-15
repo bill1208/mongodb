@@ -1,6 +1,6 @@
 # DescribeAuditFiles {#doc_api_Dds_DescribeAuditFiles .reference}
 
-调用DescribeAuditFiles接口查询审计日志文件。
+调用DescribeAuditFiles接口查询MongoDB实例的审计日志文件。
 
 本接口适用于副本集实例和分片集群实例，暂不支持单节点实例。
 
