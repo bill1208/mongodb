@@ -94,7 +94,7 @@
 
 ``` {#request_demo}
 
-http(s)://[Endpoint]/?Action=DescribeDBInstancePerformance
+http(s)://mongodb.aliyuncs.com/?Action=DescribeDBInstancePerformance
 &Key=MongoDB_DetailedSpaceUsage
 &StartTime=2019-03-11T12:30Z
 &EndTime=2019-03-11T12:30Z
