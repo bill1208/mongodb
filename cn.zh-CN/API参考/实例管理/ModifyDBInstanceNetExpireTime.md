@@ -1,6 +1,6 @@
 # ModifyDBInstanceNetExpireTime {#doc_api_Dds_ModifyDBInstanceNetExpireTime .reference}
 
-调用ModifyDBInstanceNetExpireTime接口延长经典网络保留时长。
+调用ModifyDBInstanceNetExpireTime接口延长MongoDB实例的经典网络保留时长。
 
 调用该接口时实例须满足以下条件：
 
