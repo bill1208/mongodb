@@ -1,6 +1,6 @@
 # ModifyDBInstanceSSL {#doc_api_Dds_ModifyDBInstanceSSL .reference}
 
-调用ModifyDBInstanceSSL接口修改SSL配置。
+调用ModifyDBInstanceSSL接口修改MongoDB实例的SSL配置。
 
 调用该接口时，实例必须满足以下条件：
 
