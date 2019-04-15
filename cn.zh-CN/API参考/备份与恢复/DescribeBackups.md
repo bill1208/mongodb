@@ -1,6 +1,6 @@
 # DescribeBackups {#doc_api_Dds_DescribeBackups .reference}
 
-调用DescribeBackups接口查询实例的备份列表。
+调用DescribeBackups接口查询MongoDB实例的备份列表。
 
 ## 调试 {#apiExplorer .section}
 
