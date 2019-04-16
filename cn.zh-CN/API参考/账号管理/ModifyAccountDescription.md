@@ -1,6 +1,6 @@
 # ModifyAccountDescription {#doc_api_Dds_ModifyAccountDescription .reference}
 
-调用ModifyAccountDescription接口修改MongoDB实例中账号备注信息。
+调用ModifyAccountDescription接口修改MongoDB实例中root账号的备注信息。
 
 ## 调试 {#apiExplorer .section}
 
