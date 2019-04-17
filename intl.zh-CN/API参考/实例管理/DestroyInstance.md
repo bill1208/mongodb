@@ -1,40 +1,80 @@
-# DestroyInstance {#reference_w2s_m4c_l2b .reference}
+# DestroyInstance {#doc_api_Dds_DestroyInstance .reference}
 
-## 描述 {#section_ctk_cpc_l2b .section}
+调用DestroyInstance接口销毁MongoDB实例。
 
-该接口用于销毁MongoDB实例，要求实例状态为锁定中。
+调用本接口时，实例必须满足以下条件：
 
-## 请求参数 {#section_ws2_vpc_l2b .section}
+-   实例的付费类型为包年包月。
+-   实例到期，且状态处于**锁定中**。
 
-|参数|类型|是否必选|描述|
-|--|--|----|--|
-|Action|String|是|系统规定参数，取值为：DestroyInstance。|
-|InstanceId|String|是|实例的ID。|
-|AccessKeyId|String|否|阿里云颁发给用户访问服务所用的密钥ID。|
-|ClientToken|String|否|用于保证幂等性。|
-|OwnerAccount|String|否|您登陆阿里云RDS管理控制台的主账号。|
+## 调试 {#apiExplorer .section}
 
-## 返回参数 {#section_q42_tqc_l2b .section}
+前往【[API Explorer](https://api.aliyun.com/#product=Dds&api=DestroyInstance)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
-|参数|类型|描述|
-|--|--|--|
-|RequestId|String|请求ID。|
+## 请求参数 {#parameters .section}
 
-## 请求示例 {#section_f3z_vqc_l2b .section}
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DestroyInstance|要执行的操作，取值：**DestroyInstance**。
+
+ |
+|InstanceId|String|否|dds-bpxxxxxxxx|实例ID。
+
+ **说明：** **InstanceId**参数与**DBInstanceId**参数作用相同，只需选择一个传入即可。
+
+ |
+|DBInstanceId|String|否|dds-bpxxxxxxxx|实例ID。
+
+ **说明：** **InstanceId**参数与**DBInstanceId**参数作用相同，只需选择一个传入即可。
+
+ |
+|AccessKeyId|String|否|LTAIgbTGpxxxxxx|阿里云颁发给用户的访问服务所用的密钥ID。
+
+ |
+|ClientToken|String|否|ETnLKlblzczshOTUbOCzxxxxxxxxxx|用于保证请求的幂等性，防止重复提交请求。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符，且该参数值中不能包含非ASCII字符。
+
+ |
+
+## 返回参数 {#resultMapping .section}
+
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|65BDA532-28AF-4122-AA39-B382721EEE64|请求ID。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+http(s)://mongodb.aliyuncs.com/?Action=DestroyInstance
+&DBInstanceId=dds-bpxxxxxxxx
+&<公共请求参数>
 
 ```
-https://mongodb.aliyuncs.com/?Action=DestroyInstance
-&amp;InstanceId=rdsaiiabnaiiabn
-&amp;&lt;[公共请求参数]&gt;
+
+正常返回示例
+
+`XML` 格式
+
+``` {#xml_return_success_demo}
+<DestroyInstanceResponse>
+  <RequestId>65BDA532-28AF-4122-AA39-B382721EEE64</RequestId>
+</DestroyInstanceResponse>
+
 ```
 
-## 返回示例 {#section_xhy_zqc_l2b .section}
+`JSON` 格式
 
-**JSON格式**
-
-```
+``` {#json_return_success_demo}
 {
-"RequestId":" 65BDA532-28AF-4122-AA39-B382721EEE64"
+	"RequestId":" 65BDA532-28AF-4122-AA39-B382721EEE64"
 }
 ```
+
+## 错误码 { .section}
+
+[查看本产品错误码](https://error-center.aliyun.com/status/product/Dds)
 
