@@ -1,6 +1,6 @@
 # UpgradeDBInstanceEngineVersion {#doc_api_Dds_UpgradeDBInstanceEngineVersion .reference}
 
-调用UpgradeDBInstanceEngineVersion接口升级数据库版本。
+调用UpgradeDBInstanceEngineVersion接口升级MongoDB实例的数据库版本。
 
 本接口适用于副本集实例和分片集群实例，暂不支持单节点实例。
 
@@ -23,15 +23,15 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|UpgradeDBInstanceEngineVersion|要执行的操作，取值：**UpgradeDBInstanceEngineVersion**。
-
- |
 |EngineVersion|String|是|4.0|升级的目标数据库版本，取值：**3.4**、**4.0**。
 
  **说明：** 升级的目标数据库版本必须大于实例当前的数据库版本。
 
  |
 |DBInstanceId|String|是|dds-bpxxxxxxxx|实例ID。
+
+ |
+|Action|String|否|UpgradeDBInstanceEngineVersion|要执行的操作，取值：**UpgradeDBInstanceEngineVersion**。
 
  |
 |AccessKeyId|String|否|LTAIgbTGpxxxxxx|阿里云颁发给用户的访问服务所用的密钥ID。
